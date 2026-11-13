@@ -7,7 +7,7 @@ from fastapi.responses import FileResponse
 from app.api.endpoints import router as api_router
 
 app = FastAPI(
-    title="Hệ thống Sinh Đề thi Toán THPT bằng AI (Chuẩn ex_test.sty & GDPT 2018)",
+    title="MathForge",
     description="Pipeline 4 bước sinh đề thi Toán tự động: Ma trận -> AI/RAG -> Khung LaTeX ex_test -> KaTeX Preview & TeX Live",
     version="1.0.0"
 )
@@ -42,7 +42,7 @@ async def serve_frontend(full_path: str):
     index_file = os.path.join(frontend_dist, "index.html")
     if os.path.exists(index_file):
         return FileResponse(index_file)
-    return {"message": "AI Math Exam Generator API is running. Build frontend to view the UI."}
+    return {"message": "MathForge API is running. Build frontend to view the UI."}
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

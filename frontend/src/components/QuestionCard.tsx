@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { MathView } from './MathView';
+import { TikZView } from './TikZView';
 import { 
   RefreshCw, CheckCircle2, ChevronDown, ChevronUp, 
   Code, ShieldCheck, Sparkles, Hash, ArrowUpRight, 
@@ -27,6 +28,7 @@ export interface Question {
   tikz_code?: string;
   sympy_code?: string;
   verified?: boolean;
+  template_id?: string | null;
 }
 
 interface QuestionCardProps {
@@ -37,6 +39,13 @@ interface QuestionCardProps {
   onUpdate: (updatedQuestion: Question) => void;
   isActive?: boolean;
 }
+
+export const LEVEL_BADGES = {
+  NHAN_BIET: { label: "NB", full: "Nhận biết", color: "bg-emerald-50 text-emerald-700 border-emerald-200" },
+  THONG_HIEU: { label: "TH", full: "Thông hiểu", color: "bg-blue-50 text-blue-700 border-blue-200" },
+  VAN_DUNG: { label: "VD", full: "Vận dụng", color: "bg-amber-50 text-amber-700 border-amber-200" },
+  VAN_DUNG_CAO: { label: "VDC", full: "Vận dụng cao", color: "bg-rose-50 text-rose-700 border-rose-200" }
+} as const;
 
 export const QuestionCard: React.FC<QuestionCardProps> = ({
   question,
@@ -51,17 +60,15 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   const [isRegenerating, setIsRegenerating] = useState(false);
   const [isCloning, setIsCloning] = useState(false);
   const [isCodeEditing, setIsCodeEditing] = useState(false);
-  const [editStem, setEditStem] = useState(question.stem);
+  const [numberEdit, setNumberEdit] = useState<{ start: number; end: number; value: string; top: number; left: number; width: number } | null>(null);
+  const stemRef = useRef<HTMLDivElement>(null);
+  const [inlineField, setInlineField] = useState<string | null>(null);
+  const [draft, setDraft] = useState(question);
+  const activeField = useRef<{ input: HTMLTextAreaElement; update: (value: string) => void } | null>(null);
   const [promptOpen, setPromptOpen] = useState(false);
   const [customPrompt, setCustomPrompt] = useState('');
 
-  // Màu sắc chuẩn UX thiết kế
-  const levelBadges = {
-    NHAN_BIET: { label: "NB", full: "Nhận biết", color: "bg-emerald-50 text-emerald-700 border-emerald-200" },
-    THONG_HIEU: { label: "TH", full: "Thông hiểu", color: "bg-blue-50 text-blue-700 border-blue-200" },
-    VAN_DUNG: { label: "VD", full: "Vận dụng", color: "bg-amber-50 text-amber-700 border-amber-200" },
-    VAN_DUNG_CAO: { label: "VDC", full: "Vận dụng cao", color: "bg-rose-50 text-rose-700 border-rose-200" }
-  };
+  const levelBadges = LEVEL_BADGES;
 
   const handleRegenerateClick = async () => {
     setIsRegenerating(true);
@@ -83,15 +90,100 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     }
   };
 
-  const insertMathSnippet = (snippet: string) => {
-    setEditStem(prev => prev + snippet);
+  const insertMathSnippet = (snippet: (selection: string) => string) => {
+    const field = activeField.current;
+    if (!field) return;
+    const { input, update } = field;
+    const { value, selectionStart: start, selectionEnd: end } = input;
+    const before = value.slice(0, start);
+    const insideMath = (before.match(/(?<!\\)\$\$|(?<!\\)\$/g)?.length ?? 0) % 2 === 1;
+    const formula = snippet(value.slice(start, end) || 'x');
+    const insertion = insideMath ? formula : '$' + formula + '$';
+    update(before + insertion + value.slice(end));
+    input.focus();
+    requestAnimationFrame(() => input.setSelectionRange(start + insertion.length, start + insertion.length));
   };
 
+  const openEditor = () => {
+    if (isRegenerating || isCloning) return;
+    setNumberEdit(null);
+    setDraft(question);
+    setInlineField(null);
+    setPromptOpen(false);
+    setIsCodeEditing(true);
+  };
+
+  const editField = (label: string, value: string, update: (value: string) => void, rows = 2) => (
+    <label className="block text-xs font-semibold text-slate-700">
+      {label}
+      <textarea
+        rows={rows}
+        value={value}
+        onFocus={event => { activeField.current = { input: event.currentTarget, update }; }}
+        onChange={event => update(event.target.value)}
+        className="mt-1 block w-full resize-y rounded-md border border-slate-300 bg-white p-2 font-mono text-sm font-normal"
+      />
+    </label>
+  );
+
+  const renderInline = (label: string, text: string, patch: (value: string) => Partial<Question>,
+    rendered = <MathView text={text} />, allowEmpty = false) => {
+    if (inlineField === label) {
+      return <textarea key={label} autoFocus aria-label={label} defaultValue={text}
+        rows={Math.max(1, Math.ceil(text.length / 75), text.split('\n').length)}
+        onFocus={event => {
+          const input = event.currentTarget;
+          input.setSelectionRange(input.value.length, input.value.length);
+        }}
+        onKeyDown={event => {
+          if (event.key === 'Escape') {
+            event.preventDefault();
+            event.currentTarget.value = text;
+            event.currentTarget.blur();
+          } else if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {
+            event.preventDefault();
+            event.currentTarget.blur();
+          }
+        }}
+        onBlur={event => {
+          const value = event.currentTarget.value;
+          setInlineField(null);
+          if (value !== text && (allowEmpty || value.trim())) {
+            onUpdate({ ...question, ...patch(value), verified: false, sympy_code: undefined, template_id: null });
+          }
+        }}
+        className="block w-full resize-y rounded border border-blue-400 bg-white px-1 font-inherit leading-relaxed outline-none"
+      />;
+    }
+    return <div tabIndex={0} aria-label={label} className="cursor-text rounded-sm hover:bg-blue-50/60 focus-visible:outline-blue-400"
+      onDoubleClick={event => {
+        if (numberEdit || isCodeEditing || isRegenerating || isCloning || (event.target as Element).closest('.editable-math-number, input')) return;
+        setNumberEdit(null);
+        setInlineField(label);
+      }}
+      onKeyDown={event => {
+        if (event.key === 'F2' && !isCodeEditing && !isRegenerating && !isCloning) {
+          event.preventDefault();
+          setNumberEdit(null);
+          setInlineField(label);
+        }
+      }}>
+      {rendered}
+    </div>;
+  };
+
+  const canSave = !!draft.stem.trim()
+    && (draft.type !== 'MULTIPLE_CHOICE' || (draft.choices?.length === 4 &&
+      draft.choices.every(choice => choice.trim()) && [0, 1, 2, 3].includes(draft.correct_index ?? -1)))
+    && (draft.type !== 'TRUE_FALSE' || (draft.statements?.length === 4 &&
+      draft.statements.every(item => item.statement.trim())))
+    && (draft.type !== 'SHORT_ANSWER' || !!draft.correct_value?.trim());
+
   const handleSaveCodeEdit = () => {
-    onUpdate({
-      ...question,
-      stem: editStem
-    });
+    if (!canSave) return;
+    if (draft !== question) {
+      onUpdate({ ...draft, verified: false, sympy_code: undefined, template_id: null });
+    }
     setIsCodeEditing(false);
   };
 
@@ -127,7 +219,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             </span>
           ) : (
             <span className="text-[11px] text-slate-400 bg-slate-50 px-2 py-0.5 rounded-md">
-              Chưa verify
+              Chưa xác minh
             </span>
           )}
         </div>
@@ -138,37 +230,35 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         {/* Đổi câu khác */}
         <button
           onClick={() => setPromptOpen(!promptOpen)}
-          disabled={isRegenerating || isCloning}
+          disabled={isRegenerating || isCloning || isCodeEditing || !!numberEdit || !!inlineField}
           className="inline-flex items-center gap-1 text-violet-700 hover:text-violet-900 bg-violet-50 hover:bg-violet-100 font-semibold px-2.5 py-1 rounded transition-colors duration-150 disabled:opacity-50"
-          title="Tạo bài toán khác cùng chủ đề và mức độ"
         >
           <RefreshCw className={`w-3.5 h-3.5 ${isRegenerating ? 'animate-spin' : ''}`} />
           <span>Đổi câu khác</span>
         </button>
 
-        {/* Đổi số liệu (Clone) */}
+        {/* Đổi số liệu */}
         <button
           onClick={handleCloneClick}
-          disabled={isRegenerating || isCloning}
+          disabled={isRegenerating || isCloning || isCodeEditing || !!numberEdit || !!inlineField}
           className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 font-semibold px-2.5 py-1 rounded transition-colors duration-150 disabled:opacity-50"
-          title="Giữ nguyên dạng bài, chỉ đổi các tham số số liệu"
         >
           <Hash className={`w-3.5 h-3.5 ${isCloning ? 'animate-spin' : ''}`} />
-          <span>Đổi số liệu (Clone)</span>
+          <span>Đổi số liệu</span>
         </button>
 
         {/* Sửa LaTeX trực tiếp */}
         <button
-          onClick={() => setIsCodeEditing(!isCodeEditing)}
+          disabled={isRegenerating || isCloning}
+          onClick={() => isCodeEditing ? setIsCodeEditing(false) : openEditor()}
           className={`inline-flex items-center gap-1 font-semibold px-2.5 py-1 rounded transition-colors duration-150 ${
             isCodeEditing 
               ? "bg-slate-800 text-white" 
               : "text-slate-700 hover:text-slate-900 bg-white border border-slate-200"
           }`}
-          title="Bật trình sửa mã LaTeX trực tiếp cho câu này"
         >
           <Code className="w-3.5 h-3.5" />
-          <span>{isCodeEditing ? 'Đóng Editor' : 'Sửa LaTeX'}</span>
+          <span>{isCodeEditing ? 'Đóng trình sửa' : 'Sửa nội dung'}</span>
         </button>
       </div>
 
@@ -194,77 +284,136 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </div>
       )}
 
-      {/* Trình sửa LaTeX câu hỏi (Mini Code Editor) */}
       {isCodeEditing ? (
-        <div className="mb-4 p-3 bg-slate-900 rounded-xl border border-slate-800 text-slate-100 space-y-2.5">
-          <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-            <span className="font-mono text-slate-400">Trình soạn LaTeX nhanh:</span>
-            {/* Thanh công cụ chèn nhanh ký hiệu */}
-            <div className="flex flex-wrap gap-1 font-mono text-[11px]">
-              {[
-                { label: '\\frac{}{}', code: '\\frac{a}{b}' },
-                { label: '\\sqrt{}', code: '\\sqrt{x}' },
-                { label: '\\int', code: '\\int_{a}^{b} f(x)dx' },
-                { label: '\\vec{}', code: '\\overrightarrow{u}' },
-                { label: '\\in \\mathbb{R}', code: '\\in \\mathbb{R}' },
-              ].map(s => (
-                <button
-                  key={s.label}
-                  type="button"
-                  onClick={() => insertMathSnippet(s.code)}
-                  className="px-2 py-0.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded border border-slate-700"
-                >
-                  {s.label}
-                </button>
-              ))}
-            </div>
+        <div className="mb-4 space-y-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
+          <div className="flex flex-wrap gap-2">
+            {([
+              ['Căn bậc hai', (x: string) => `\\sqrt{${x}}`],
+              ['Căn bậc n', (x: string) => `\\sqrt[n]{${x}}`],
+              ['Phân số', (x: string) => `\\frac{${x}}{b}`],
+              ['Số mũ', (x: string) => `{${x}}^{2}`],
+            ] as const).map(([label, snippet]) => (
+              <button key={label} type="button"
+                onMouseDown={event => event.preventDefault()}
+                onClick={() => insertMathSnippet(snippet)}
+                className="rounded border border-slate-300 bg-white px-2 py-1 text-xs font-medium">
+                {label}
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-slate-600">Đặt con trỏ hoặc bôi đen nội dung để chèn công thức. Kiểm tra lại đáp án và lời giải nếu đổi dữ kiện.</p>
+          {editField('Đề bài', draft.stem, stem => setDraft(prev => ({ ...prev, stem })), 4)}
+          <div className="rounded border border-slate-200 bg-white p-2 text-sm">
+            <div className="mb-1 text-xs font-semibold text-slate-600">Xem trước đề bài</div>
+            <MathView text={draft.stem} />
           </div>
 
-          <textarea
-            aria-label="Mã nguồn LaTeX của đề bài"
-            value={editStem}
-            onChange={(e) => setEditStem(e.target.value)}
-            className="w-full h-28 bg-slate-950 font-mono text-xs text-emerald-400 p-3 rounded-lg border border-slate-800 focus:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 leading-relaxed"
-          />
+          {draft.type === 'MULTIPLE_CHOICE' && (
+            <>
+              {Array.from({ length: 4 }, (_, i) => editField(
+                'Phương án ' + 'ABCD'[i], draft.choices?.[i] ?? '',
+                value => setDraft(prev => ({
+                  ...prev, choices: Array.from({ length: 4 }, (_, index) =>
+                    index === i ? value : prev.choices?.[index] ?? ''),
+                })),
+              )).map((field, i) => <React.Fragment key={i}>{field}</React.Fragment>)}
+              <label className="block text-xs font-semibold">
+                Đáp án đúng
+                <select className="ml-2 rounded border bg-white p-1" value={draft.correct_index ?? ''}
+                  onChange={event => {
+                    const value = event.target.value;
+                    setDraft(prev => ({ ...prev, correct_index: value === '' ? undefined : Number(value) }));
+                  }}>
+                  <option value="">Chọn đáp án</option>
+                  {[0, 1, 2, 3].map(i => <option key={i} value={i}>{'ABCD'[i]}</option>)}
+                </select>
+              </label>
+            </>
+          )}
 
+          {draft.type === 'TRUE_FALSE' && draft.statements?.map((item, i) => {
+            const updateItem = (values: Partial<TrueFalseItem>) => setDraft(prev => ({
+              ...prev, statements: prev.statements?.map((statement, index) =>
+                index === i ? { ...statement, ...values } : statement),
+            }));
+            return (
+              <div key={i} className="space-y-2 border-t border-slate-200 pt-2">
+                {editField('Mệnh đề ' + 'abcd'[i], item.statement, statement => updateItem({ statement }))}
+                <label className="flex items-center gap-2 text-xs">
+                  <input type="checkbox" checked={item.is_correct}
+                    onChange={event => updateItem({ is_correct: event.target.checked })} />
+                  Mệnh đề đúng
+                </label>
+                {editField('Giải thích', item.explanation ?? '', explanation => updateItem({ explanation }))}
+              </div>
+            );
+          })}
+          {draft.type === 'SHORT_ANSWER' && editField('Đáp số', draft.correct_value ?? '',
+            correct_value => setDraft(prev => ({ ...prev, correct_value })), 1)}
+          {editField('Lời giải', draft.solution, solution => setDraft(prev => ({ ...prev, solution })), 4)}
           <div className="flex justify-end gap-2">
-            <button
-              onClick={() => setIsCodeEditing(false)}
-              className="px-3 py-1 text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-md"
-            >
-              Hủy
-            </button>
-            <button
-              onClick={handleSaveCodeEdit}
-              className="inline-flex items-center gap-1 px-3 py-1 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-md shadow-sm"
-            >
+            <button onClick={() => setIsCodeEditing(false)} className="rounded border px-3 py-1 text-xs">Hủy</button>
+            <button onClick={handleSaveCodeEdit} disabled={!canSave}
+              className="inline-flex items-center gap-1 rounded bg-blue-600 px-3 py-1 text-xs font-bold text-white disabled:opacity-50">
               <Check className="w-3.5 h-3.5" /> Lưu thay đổi
             </button>
           </div>
         </div>
       ) : (
-        /* Đề bài hiển thị KaTeX */
-        <div className="text-slate-900 text-sm md:text-base mb-4 font-normal leading-relaxed">
-          <MathView text={question.stem} />
+        <div ref={stemRef} className="relative mb-4 text-sm font-normal leading-relaxed text-slate-900 md:text-base">
+          {renderInline('Đề bài', question.stem, stem => ({ stem }), <MathView text={question.stem} onNumberEdit={isRegenerating || isCloning ? undefined : (start, end, value, target) => {
+            const bounds = stemRef.current?.getBoundingClientRect();
+            if (!bounds) return;
+            const number = target.getBoundingClientRect();
+            setNumberEdit({
+              start, end, value, top: number.top - bounds.top + number.height / 2,
+              left: number.left - bounds.left, width: Math.max(number.width + 10, 26),
+            });
+          }} />)}
+          {numberEdit && (
+            <input
+              key={numberEdit.start}
+              autoFocus
+              aria-label="Sửa nội dung tại vị trí đã chọn"
+              inputMode={/^\d/.test(numberEdit.value) ? "decimal" : "text"}
+              defaultValue={numberEdit.value.replace('{,}', ',')}
+              onFocus={event => event.currentTarget.select()}
+              onInput={event => {
+                const input = event.currentTarget;
+                input.style.width = Math.max(numberEdit.width, input.value.length * 10 + 10) + 'px';
+              }}
+              onKeyDown={event => {
+                if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
+                  event.preventDefault();
+                  event.currentTarget.blur();
+                }
+                if (event.key === 'Escape') {
+                  event.currentTarget.value = numberEdit.value.replace('{,}', ',');
+                  event.currentTarget.blur();
+                }
+              }}
+              onBlur={event => {
+                const value = event.currentTarget.value.trim();
+                setNumberEdit(null);
+                if (!value || value === numberEdit.value.replace('{,}', ',')) return;
+                const stem = question.stem.normalize('NFC');
+                if (stem.slice(numberEdit.start, numberEdit.end) !== numberEdit.value) return;
+                const prefix = stem.slice(0, numberEdit.start);
+                let replacement = numberEdit.value.includes('{,}') ? value.replaceAll(',', '{,}') : value;
+                if (/[_^]$/.test(prefix) && replacement.length > 1) replacement = '{' + replacement + '}';
+                onUpdate({ ...question, stem: prefix + replacement + stem.slice(numberEdit.end),
+                  verified: false, sympy_code: undefined, template_id: null });
+              }}
+              className="absolute z-10 -translate-y-1/2 rounded-sm border border-blue-500 bg-white px-1 text-center leading-tight text-slate-900 outline-none"
+              style={{ top: numberEdit.top, left: numberEdit.left, width: numberEdit.width }}
+            />
+          )}
         </div>
       )}
 
-      {/* Hiển thị TikZ / tkz-tab nếu có */}
+      {/* Hiển thị TikZ / tkz-tab trực quan */}
       {question.tikz_code && (
-        <div className="mb-4">
-          <button
-            onClick={() => setShowTikz(!showTikz)}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 px-2.5 py-1 rounded-md"
-          >
-            <Code className="w-3.5 h-3.5" />
-            <span>Mã TikZ / tkz-tab ({showTikz ? 'Ẩn' : 'Xem mã nguồn'})</span>
-          </button>
-          {showTikz && (
-            <pre className="mt-2 p-3 bg-slate-900 text-emerald-300 text-xs rounded-lg overflow-x-auto font-mono">
-              {question.tikz_code}
-            </pre>
-          )}
-        </div>
+        <TikZView tikzCode={question.tikz_code} />
       )}
 
       {/* Phương án theo từng dạng câu */}
@@ -287,8 +436,10 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 }`}>
                   {letters[i]}
                 </span>
-                <div className="flex-1 overflow-x-auto pt-0.5">
-                  <MathView text={choice} />
+                <div className="min-w-0 flex-1 overflow-x-auto py-1">
+                  {renderInline('Phương án ' + letters[i], choice, value => ({
+                    choices: question.choices?.map((option, index) => index === i ? value : option),
+                  }))}
                 </div>
                 {isCorrect && (
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 ml-1 mt-0.5" />
@@ -318,11 +469,17 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                     {labels[i]}
                   </span>
                   <div className="text-sm">
-                    <MathView text={st.statement} />
+                    {renderInline('Mệnh đề ' + labels[i], st.statement, value => ({
+                      statements: question.statements?.map((item, index) =>
+                        index === i ? { ...item, statement: value } : item),
+                    }))}
                     {st.explanation && (
-                      <span className="text-xs text-slate-500 block mt-0.5 italic">
-                        {st.explanation}
-                      </span>
+                      <div className="mt-0.5 text-xs italic text-slate-500">
+                        {renderInline('Giải thích ' + labels[i], st.explanation, value => ({
+                          statements: question.statements?.map((item, index) =>
+                            index === i ? { ...item, explanation: value } : item),
+                        }), undefined, true)}
+                      </div>
                     )}
                   </div>
                 </div>
@@ -342,9 +499,20 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       {question.type === "SHORT_ANSWER" && (
         <div className="mb-4 p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-center gap-3">
           <span className="text-sm font-semibold text-slate-700">Đáp số cần điền:</span>
-          <span className="font-mono font-bold text-base px-3 py-1 bg-white border-2 border-blue-600 text-blue-700 rounded-md shadow-xs">
-            {question.correct_value || 'Chưa có'}
-          </span>
+          <div className="min-w-24 rounded-md border border-blue-300 bg-white px-2 py-1 font-mono text-blue-700">
+            {renderInline('Đáp số', question.correct_value ?? '', correct_value => ({ correct_value }),
+              <span>{question.correct_value || 'Chưa có'}</span>)}
+          </div>
+        </div>
+      )}
+
+      {question.type === "ESSAY" && (
+        <div className="mb-4 p-3 bg-indigo-50/70 rounded-lg border border-indigo-200 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-indigo-600" />
+            <span className="text-xs font-bold text-indigo-900 uppercase">Hình thức: Câu hỏi Tự luận</span>
+          </div>
+          <span className="text-xs text-indigo-700 italic">Học sinh trình bày lời giải và lập luận chi tiết</span>
         </div>
       )}
 
@@ -356,14 +524,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         >
           <span className="flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-violet-600" />
-            <span>Lời giải chi tiết (Chain-of-thought)</span>
+            <span>Lời giải</span>
           </span>
           {showSolution ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
         </button>
 
         {showSolution && (
           <div className="mt-2 p-3.5 bg-amber-50/60 rounded-lg border border-amber-200 text-sm text-slate-800 leading-relaxed font-normal">
-            <MathView text={question.solution} />
+            {renderInline('Lời giải', question.solution, solution => ({ solution }), undefined, true)}
             {question.sympy_code && (
               <div className="mt-3 pt-2 border-t border-amber-200">
                 <span className="text-xs font-bold text-amber-900 block mb-1">Mã xác thực SymPy:</span>

@@ -18,50 +18,32 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
   const [semester, setSemester] = useState<string>('Học kỳ 1');
   const [timeMinutes, setTimeMinutes] = useState<number>(90);
   const [description, setDescription] = useState('');
-  const [slots, setSlots] = useState<ExamSlot[]>([
-    {
-      slot_id: `slot_${Date.now()}_1`,
-      slot_number: 1,
-      part: 1,
-      type: "MULTIPLE_CHOICE",
-      topic: "Ứng dụng đạo hàm khảo sát hàm số",
-      subtopic: "Tính đơn điệu của hàm số",
-      level: "NHAN_BIET",
-      points: 0.25
-    },
-    {
-      slot_id: `slot_${Date.now()}_2`,
-      slot_number: 2,
-      part: 1,
-      type: "MULTIPLE_CHOICE",
-      topic: "Ứng dụng đạo hàm khảo sát hàm số",
-      subtopic: "Cực trị của hàm số",
-      level: "THONG_HIEU",
-      points: 0.25
-    },
-    {
-      slot_id: `slot_${Date.now()}_3`,
-      slot_number: 3,
-      part: 2,
-      type: "TRUE_FALSE",
-      topic: "Ứng dụng đạo hàm khảo sát hàm số",
-      subtopic: "Khảo sát tính biến thiên và đồ thị",
-      level: "THONG_HIEU",
-      points: 1.0
-    },
-    {
-      slot_id: `slot_${Date.now()}_4`,
-      slot_number: 4,
-      part: 3,
-      type: "SHORT_ANSWER",
-      topic: "Ứng dụng đạo hàm khảo sát hàm số",
-      subtopic: "Bài toán tối ưu hóa thực tế",
-      level: "VAN_DUNG",
-      points: 0.5
-    }
-  ]);
+  const [slots, setSlots] = useState<ExamSlot[]>([]);
+  const [preset, setPreset] = useState<ExamMatrix | null>(null);
+  const [loadError, setLoadError] = useState('');
 
-  if (!isOpen) return null;
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const controller = new AbortController();
+    const params = new URLSearchParams({ grade: String(grade), semester });
+    async function loadPreset() {
+      try {
+        const response = await fetch(`/api/matrix/library?${params}`, { signal: controller.signal });
+        if (!response.ok) throw new Error();
+        const matrices: ExamMatrix[] = await response.json();
+        if (controller.signal.aborted) return;
+        const match = matrices.find(matrix =>
+          !matrix.is_custom && matrix.grade === grade && matrix.semester === semester
+        );
+        setPreset(match ?? null);
+        setLoadError(match ? '' : 'Chưa có mẫu cho lớp và kỳ này.');
+      } catch {
+        if (!controller.signal.aborted) setLoadError('Không tải được chủ đề. Hãy đóng và mở lại hộp thoại để thử lại.');
+      }
+    }
+    void loadPreset();
+    return () => controller.abort();
+  }, [isOpen, grade, semester]);
 
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -73,10 +55,26 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
     }
   }, [isOpen, onClose]);
 
-  const handleAddSlot = (part: number) => {
+  if (!isOpen) return null;
+
+  const topics = new Map<string, Set<string>>();
+  for (const slot of preset?.slots ?? []) {
+    if (!topics.has(slot.topic)) topics.set(slot.topic, new Set());
+    if (slot.subtopic) topics.get(slot.topic)?.add(slot.subtopic);
+  }
+
+  const changeScope = (nextGrade: number, nextSemester: string) => {
+    setGrade(nextGrade);
+    setSemester(nextSemester);
+    setPreset(null);
+    setLoadError('');
+    setSlots(previous => previous.map(slot => ({ ...slot, topic: '', subtopic: '' })));
+  };
+
+  const handleAddSlot = (part: number, forcedType?: ExamSlot["type"]) => {
     const newNum = slots.length + 1;
-    const newType = part === 1 ? "MULTIPLE_CHOICE" : part === 2 ? "TRUE_FALSE" : "SHORT_ANSWER";
-    const defaultPoints = part === 1 ? 0.25 : part === 2 ? 1.0 : 0.5;
+    const newType = forcedType || (part === 1 ? "MULTIPLE_CHOICE" : part === 2 ? "TRUE_FALSE" : part === 3 ? "SHORT_ANSWER" : "ESSAY");
+    const defaultPoints = newType === "MULTIPLE_CHOICE" ? 0.25 : newType === "SHORT_ANSWER" ? 0.5 : 1.0;
 
     setSlots([
       ...slots,
@@ -85,8 +83,8 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
         slot_number: newNum,
         part: part,
         type: newType,
-        topic: "Chủ đề Toán học",
-        subtopic: "Dạng bài",
+        topic: "",
+        subtopic: "",
         level: "THONG_HIEU",
         points: defaultPoints
       }
@@ -98,13 +96,16 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
   };
 
   const handleSlotChange = (id: string, field: keyof ExamSlot, val: any) => {
-    setSlots(slots.map(s => s.slot_id === id ? { ...s, [field]: val } : s));
+    setSlots(previous => previous.map(s => s.slot_id === id ? {
+      ...s, [field]: val, ...(field === 'topic' ? { subtopic: '' } : {})
+    } : s));
   };
 
   const totalPoints = slots.reduce((sum, s) => sum + (Number(s.points) || 0), 0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!preset || !slots.length || slots.some(slot => !slot.topic || !slot.subtopic)) return;
     if (!title.trim()) {
       alert("Vui lòng nhập tên đề thi / ma trận");
       return;
@@ -176,7 +177,10 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
               <select
                 id="matrix-grade-select"
                 value={grade}
-                onChange={(e) => setGrade(Number(e.target.value))}
+                onChange={(e) => {
+                  const nextGrade = Number(e.target.value);
+                  changeScope(nextGrade, nextGrade !== 12 && semester === 'Tốt nghiệp THPT' ? 'Học kỳ 1' : semester);
+                }}
                 className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 bg-white"
               >
                 <option value={6}>Lớp 6</option>
@@ -196,14 +200,14 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
               <select
                 id="matrix-semester-select"
                 value={semester}
-                onChange={(e) => setSemester(e.target.value)}
+                onChange={(e) => changeScope(grade, e.target.value)}
                 className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 bg-white"
               >
                 <option value="Giữa kỳ 1">Giữa kỳ 1</option>
                 <option value="Học kỳ 1">Cuối kỳ 1</option>
                 <option value="Giữa kỳ 2">Giữa kỳ 2</option>
                 <option value="Học kỳ 2">Cuối kỳ 2</option>
-                <option value="Tốt nghiệp THPT">Tốt nghiệp THPT</option>
+                {grade === 12 && <option value="Tốt nghiệp THPT">Tốt nghiệp THPT</option>}
               </select>
             </div>
 
@@ -239,31 +243,44 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
 
           {/* Slots Table */}
           <div className="space-y-3">
+            {!preset && <p role="status" className="text-sm text-slate-600">{loadError || 'Đang tải chủ đề và dạng bài…'}</p>}
             <div className="flex items-center justify-between">
               <span className="text-sm font-bold text-slate-900 uppercase tracking-wide">
                 Danh sách câu hỏi ({slots.length} câu)
               </span>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-1.5">
+                <button type="button" disabled={!preset || slots.length > 0}
+                  onClick={() => preset && setSlots(preset.slots.map(slot => ({ ...slot })))}
+                  className="px-2.5 py-1 text-xs font-semibold rounded border border-slate-300 disabled:opacity-50">
+                  Dùng ma trận mẫu
+                </button>
                 <button
                   type="button"
-                  onClick={() => handleAddSlot(1)}
+                  onClick={() => handleAddSlot(1, "MULTIPLE_CHOICE")}
                   className="px-2.5 py-1 text-xs font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100 rounded border border-blue-200"
                 >
-                  + Thêm Phần I (TN)
+                  + TN 4 lựa chọn (0.25đ)
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleAddSlot(2)}
+                  onClick={() => handleAddSlot(2, "TRUE_FALSE")}
                   className="px-2.5 py-1 text-xs font-semibold bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded border border-emerald-200"
                 >
-                  + Thêm Phần II (Đ/S)
+                  + Đúng / Sai (1.0đ)
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleAddSlot(3)}
+                  onClick={() => handleAddSlot(3, "SHORT_ANSWER")}
                   className="px-2.5 py-1 text-xs font-semibold bg-amber-50 text-amber-700 hover:bg-amber-100 rounded border border-amber-200"
                 >
-                  + Thêm Phần III (Ngắn)
+                  + Trả lời ngắn (0.5đ)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleAddSlot(slots.length > 0 ? (matrix => (slots.some(s => s.type === "ESSAY") ? slots.find(s => s.type === "ESSAY")!.part : Math.max(...slots.map(s => s.part)) + 1))(slots) : 2, "ESSAY")}
+                  className="px-2.5 py-1 text-xs font-semibold bg-purple-50 text-purple-700 hover:bg-purple-100 rounded border border-purple-200"
+                >
+                  + Tự luận (1.0đ)
                 </button>
               </div>
             </div>
@@ -273,7 +290,8 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
                 <thead className="bg-slate-100 text-slate-700 font-semibold sticky top-0">
                   <tr>
                     <th className="p-2 w-10 text-center">STT</th>
-                    <th className="p-2 w-28">Phần thi</th>
+                    <th className="p-2 w-16 text-center">Phần</th>
+                    <th className="p-2 w-36">Dạng thức</th>
                     <th className="p-2">Chủ đề</th>
                     <th className="p-2">Dạng bài</th>
                     <th className="p-2 w-28">Mức độ</th>
@@ -285,42 +303,67 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
                   {slots.map((s, idx) => (
                     <tr key={s.slot_id} className="hover:bg-slate-50">
                       <td className="p-2 font-bold text-center">{idx + 1}</td>
+                      <td className="p-2 text-center">
+                        <input
+                          type="number"
+                          min={1}
+                          max={5}
+                          value={s.part}
+                          onChange={(e) => handleSlotChange(s.slot_id, 'part', parseInt(e.target.value) || 1)}
+                          className="w-12 text-center p-1 border rounded bg-white"
+                        />
+                      </td>
                       <td className="p-2">
                         <select
-                          value={s.part}
+                          aria-label={`Dạng thức cho câu ${idx + 1}`}
+                          value={s.type}
                           onChange={(e) => {
-                            const p = Number(e.target.value);
-                            handleSlotChange(s.slot_id, 'part', p);
-                            handleSlotChange(s.slot_id, 'type', p === 1 ? 'MULTIPLE_CHOICE' : p === 2 ? 'TRUE_FALSE' : 'SHORT_ANSWER');
+                            const t = e.target.value as ExamSlot["type"];
+                            handleSlotChange(s.slot_id, 'type', t);
+                            if (t === 'MULTIPLE_CHOICE') handleSlotChange(s.slot_id, 'points', 0.25);
+                            else if (t === 'SHORT_ANSWER') handleSlotChange(s.slot_id, 'points', 0.5);
+                            else handleSlotChange(s.slot_id, 'points', 1.0);
                           }}
-                          className="w-full p-1 border rounded bg-white"
+                          className="w-full p-1 border rounded bg-white focus:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 font-medium"
                         >
-                          <option value={1}>Phần I (TN)</option>
-                          <option value={2}>Phần II (Đ/S)</option>
-                          <option value={3}>Phần III (Ngắn)</option>
+                          <option value="MULTIPLE_CHOICE">Trắc nghiệm</option>
+                          <option value="TRUE_FALSE">Đúng / Sai</option>
+                          <option value="SHORT_ANSWER">Trả lời ngắn</option>
+                          <option value="ESSAY">Tự luận</option>
                         </select>
                       </td>
                       <td className="p-2">
-                        <input
-                          type="text"
+                        <select
+                          required
+                          disabled={!preset}
+                          aria-label={`Chủ đề cho câu ${idx + 1}`}
                           value={s.topic}
                           onChange={(e) => handleSlotChange(s.slot_id, 'topic', e.target.value)}
-                          className="w-full p-1 border rounded"
-                        />
-                      </td>
-                      <td className="p-2">
-                        <input
-                          type="text"
-                          value={s.subtopic || ''}
-                          onChange={(e) => handleSlotChange(s.slot_id, 'subtopic', e.target.value)}
-                          className="w-full p-1 border rounded"
-                        />
+                          className="w-full p-1 border rounded focus:outline-none focus-visible:ring-1 focus-visible:ring-blue-500"
+                        >
+                          <option value="">Chọn chủ đề</option>
+                          {[...topics.keys()].map(topic => <option key={topic}>{topic}</option>)}
+                        </select>
                       </td>
                       <td className="p-2">
                         <select
+                          required
+                          disabled={!preset || !s.topic}
+                          aria-label={`Dạng bài chi tiết cho câu ${idx + 1}`}
+                          value={s.subtopic || ''}
+                          onChange={(e) => handleSlotChange(s.slot_id, 'subtopic', e.target.value)}
+                          className="w-full p-1 border rounded focus:outline-none focus-visible:ring-1 focus-visible:ring-blue-500"
+                        >
+                          <option value="">Chọn dạng bài</option>
+                          {[...(topics.get(s.topic) ?? [])].map(subtopic => <option key={subtopic}>{subtopic}</option>)}
+                        </select>
+                      </td>
+                      <td className="p-2">
+                        <select
+                          aria-label={`Mức độ nhận thức cho câu ${idx + 1}`}
                           value={s.level}
                           onChange={(e) => handleSlotChange(s.slot_id, 'level', e.target.value)}
-                          className="w-full p-1 border rounded bg-white"
+                          className="w-full p-1 border rounded bg-white focus:outline-none focus-visible:ring-1 focus-visible:ring-blue-500"
                         >
                           <option value="NHAN_BIET">Nhận biết</option>
                           <option value="THONG_HIEU">Thông hiểu</option>
@@ -332,16 +375,18 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
                         <input
                           type="number"
                           step={0.1}
+                          aria-label={`Điểm số cho câu ${idx + 1}`}
                           value={s.points}
                           onChange={(e) => handleSlotChange(s.slot_id, 'points', parseFloat(e.target.value) || 0)}
-                          className="w-14 p-1 border rounded text-center"
+                          className="w-14 p-1 border rounded text-center focus:outline-none focus-visible:ring-1 focus-visible:ring-blue-500"
                         />
                       </td>
                       <td className="p-2 text-center">
                         <button
                           type="button"
+                          aria-label={`Xóa câu ${idx + 1}`}
                           onClick={() => handleRemoveSlot(s.slot_id)}
-                          className="text-slate-400 hover:text-rose-600"
+                          className="text-slate-400 hover:text-rose-600 focus:outline-none focus-visible:ring-1 focus-visible:ring-rose-500 rounded p-1"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
@@ -378,6 +423,7 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
             </button>
             <button
               type="submit"
+              disabled={!preset || !slots.length || slots.some(slot => !slot.topic || !slot.subtopic)}
               className="inline-flex items-center gap-1.5 px-5 py-2 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm transition"
             >
               <Check className="w-4 h-4" />

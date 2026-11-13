@@ -29,7 +29,7 @@ class CompilerService:
         """Kiểm tra xem Docker daemon có đang chạy không."""
         try:
             res = subprocess.run(
-                ["docker", "info"],
+                ["docker", "version", "--format", "{{.Server.Version}}"],
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
                 timeout=3
@@ -44,6 +44,21 @@ class CompilerService:
         Biên dịch chuỗi mã nguồn LaTeX sang bytes PDF.
         Trả về: (thành_công, dữ_liệu_pdf_bytes, log_thông_báo)
         """
+        local_cmd = cls.check_local_compiler()
+        docker_available = not local_cmd and cls.check_docker_available()
+        if not local_cmd and not docker_available:
+            if shutil.which("docker"):
+                return False, None, (
+                    "Đã cài Docker nhưng Docker Engine chưa phản hồi. "
+                    "Mở Docker Desktop, đợi Engine chạy rồi thử xuất PDF lại. "
+                    "Nếu cần PDF ngay, chọn In A4 rồi chọn Lưu dưới dạng PDF."
+                )
+
+            return False, None, (
+                "Máy chưa có XeLaTeX, pdfLaTeX hoặc Docker. "
+                "Chọn In A4 rồi chọn Lưu dưới dạng PDF, hoặc tải mã nguồn .tex để biên dịch."
+            )
+
         temp_dir = tempfile.mkdtemp(prefix="latex_build_")
         try:
             # 1. Ghi file .tex
@@ -56,7 +71,6 @@ class CompilerService:
             with open(sty_file_path, "w", encoding="utf-8") as f:
                 f.write(EX_TEST_STY_CONTENT)
 
-            local_cmd = cls.check_local_compiler()
             if local_cmd:
                 logger.info(f"Biên dịch bằng công cụ local: {local_cmd}")
                 cmd = [local_cmd, "-interaction=nonstopmode", f"{job_name}.tex"]
@@ -67,7 +81,7 @@ class CompilerService:
                         return True, f.read(), "Biên dịch PDF cục bộ thành công"
                 return False, None, f"Lỗi biên dịch: {proc.stdout[-500:] if proc.stdout else proc.stderr}"
 
-            if cls.check_docker_available():
+            if docker_available:
                 logger.info("Biên dịch qua Docker container TeX Live")
                 # Chạy container TeX Live
                 docker_cmd = [
@@ -84,10 +98,6 @@ class CompilerService:
                         return True, f.read(), "Biên dịch PDF qua Docker thành công"
                 return False, None, f"Lỗi biên dịch qua Docker: {proc.stderr}"
 
-            return False, None, (
-                "Chưa tìm thấy pdflatex cục bộ hoặc Docker chưa được bật. "
-                "Bạn có thể tải về file mã nguồn .tex để mở và biên dịch bằng TeXstudio, Overleaf hoặc kích hoạt Docker."
-            )
 
         except Exception as e:
             return False, None, f"Lỗi ngoại lệ khi biên dịch: {str(e)}"

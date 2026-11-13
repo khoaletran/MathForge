@@ -1,6 +1,6 @@
-# Hệ thống Sinh Đề Thi Toán THPT Bằng AI (Chuẩn ex_test.sty & GDPT 2018)
+# MathForge
 
-Hệ thống chuyên nghiệp hỗ trợ giáo viên Toán THPT tại Việt Nam tạo đề thi tự động theo chương trình mới GDPT 2018 và xuất bản mã nguồn LaTeX chuẩn `ex_test.sty`.
+Ứng dụng hỗ trợ giáo viên tạo đề Toán theo ma trận và xuất đề. Xem [nguồn chính thức và ma trận tham khảo Toán lớp 6–12](MA_TRAN_TOAN.md) để đối chiếu dữ liệu của thư viện trước khi dùng.
 
 ---
 

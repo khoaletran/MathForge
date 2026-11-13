@@ -9,8 +9,8 @@ interface ExportModalProps {
   isOpen: boolean;
   onClose: () => void;
   latexCode: string;
-  onCompilePdf: () => Promise<void>;
-  isCompiling: boolean;
+  onDownloadDocx: () => Promise<void>;
+  onSavePdf: () => void;
   includeSolution: boolean;
   onToggleSolution: (val: boolean) => void;
   examMeta: {
@@ -27,8 +27,8 @@ export const ExportModal: React.FC<ExportModalProps> = ({
   isOpen,
   onClose,
   latexCode,
-  onCompilePdf,
-  isCompiling,
+  onDownloadDocx,
+  onSavePdf,
   includeSolution,
   onToggleSolution,
   examMeta,
@@ -39,6 +39,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
   const [shuffleCodes, setShuffleCodes] = useState<string[]>(['101', '102', '103', '104']);
   const [selectedNumCodes, setSelectedNumCodes] = useState<number>(1);
   const [isShuffling, setIsShuffling] = useState(false);
+  const [isDownloadingDocx, setIsDownloadingDocx] = useState(false);
 
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -102,12 +103,12 @@ export const ExportModal: React.FC<ExportModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overscroll-contain"
+      className="no-print fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overscroll-contain"
       role="dialog"
       aria-modal="true"
       aria-labelledby="export-dialog-title"
     >
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in duration-200">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in duration-200 overscroll-contain">
         {/* Header */}
         <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div className="flex items-center gap-2">
@@ -115,15 +116,16 @@ export const ExportModal: React.FC<ExportModalProps> = ({
             <h3 id="export-dialog-title" className="font-bold text-slate-900 text-lg">Xuất Bản & Trộn Mã Đề Thi</h3>
           </div>
           <button 
+            type="button"
             onClick={onClose} 
-            className="p-1 rounded-lg text-slate-400 hover:text-slate-600 focus-visible:ring-2 focus-visible:ring-blue-500"
-            aria-label="Đóng cửa sổ xuất bản"
+            className="p-1 rounded-lg text-slate-400 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            aria-label="Đóng cửa sổ xuất đề thi"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-6 space-y-6">
+        <div className="flex-1 overflow-y-auto p-6 space-y-6 overscroll-contain">
           {/* Header Metadata Config */}
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
             <span className="text-xs font-bold text-slate-700 uppercase tracking-wide block">
@@ -131,39 +133,43 @@ export const ExportModal: React.FC<ExportModalProps> = ({
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
               <div>
-                <label className="text-slate-500 block mb-1">Sở / Trường:</label>
+                <label htmlFor="export-school-name" className="text-slate-500 block mb-1">Sở / Trường:</label>
                 <input
+                  id="export-school-name"
                   type="text"
                   value={examMeta.school_name}
                   onChange={(e) => onUpdateExamMeta({ ...examMeta, school_name: e.target.value })}
-                  className="w-full p-2 bg-white border border-slate-300 rounded-md font-medium"
+                  className="w-full p-2 bg-white border border-slate-300 rounded-md font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 />
               </div>
               <div>
-                <label className="text-slate-500 block mb-1">Tên kỳ thi:</label>
+                <label htmlFor="export-exam-name" className="text-slate-500 block mb-1">Tên kỳ thi:</label>
                 <input
+                  id="export-exam-name"
                   type="text"
                   value={examMeta.exam_name}
                   onChange={(e) => onUpdateExamMeta({ ...examMeta, exam_name: e.target.value })}
-                  className="w-full p-2 bg-white border border-slate-300 rounded-md font-medium"
+                  className="w-full p-2 bg-white border border-slate-300 rounded-md font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 />
               </div>
               <div>
-                <label className="text-slate-500 block mb-1">Năm học:</label>
+                <label htmlFor="export-academic-year" className="text-slate-500 block mb-1">Năm học:</label>
                 <input
+                  id="export-academic-year"
                   type="text"
                   value={examMeta.academic_year}
                   onChange={(e) => onUpdateExamMeta({ ...examMeta, academic_year: e.target.value })}
-                  className="w-full p-2 bg-white border border-slate-300 rounded-md font-medium"
+                  className="w-full p-2 bg-white border border-slate-300 rounded-md font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 />
               </div>
               <div>
-                <label className="text-slate-500 block mb-1">Mã đề gốc:</label>
+                <label htmlFor="export-exam-code" className="text-slate-500 block mb-1">Mã đề gốc:</label>
                 <input
+                  id="export-exam-code"
                   type="text"
                   value={examMeta.exam_code}
                   onChange={(e) => onUpdateExamMeta({ ...examMeta, exam_code: e.target.value })}
-                  className="w-full p-2 bg-white border border-slate-300 rounded-md font-medium font-mono"
+                  className="w-full p-2 bg-white border border-slate-300 rounded-md font-medium font-mono focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 />
               </div>
             </div>
@@ -239,8 +245,9 @@ export const ExportModal: React.FC<ExportModalProps> = ({
 
             <textarea
               readOnly
+              aria-label="Mã nguồn LaTeX của đề thi"
               value={latexCode}
-              className="w-full h-44 bg-slate-900 text-emerald-300 font-mono text-xs p-3 rounded-lg border border-slate-800 focus:outline-none resize-none overflow-y-auto leading-relaxed select-all"
+              className="w-full h-44 bg-slate-900 text-emerald-300 font-mono text-xs p-3 rounded-lg border border-slate-800 focus:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 resize-none overflow-y-auto leading-relaxed select-all"
             />
           </div>
         </div>
@@ -253,6 +260,25 @@ export const ExportModal: React.FC<ExportModalProps> = ({
 
           <div className="flex items-center gap-2">
             <button
+              type="button"
+              onClick={async () => {
+                setIsDownloadingDocx(true);
+                try { await onDownloadDocx(); } finally { setIsDownloadingDocx(false); }
+              }}
+              disabled={isDownloadingDocx || questions.length === 0}
+              className="rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-700 disabled:opacity-50"
+            >
+              {isDownloadingDocx ? 'Đang tạo DOCX…' : 'Tải DOCX'}
+            </button>
+            <button
+              type="button"
+              onClick={onSavePdf}
+              disabled={questions.length === 0}
+              className="rounded-lg bg-blue-600 px-3.5 py-2 text-xs font-bold text-white disabled:opacity-50"
+            >
+              Lưu PDF
+            </button>
+            <button
               onClick={handleDownloadTex}
               className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white hover:bg-slate-100 text-slate-700 text-xs font-bold rounded-lg border border-slate-200 transition"
             >
@@ -260,23 +286,6 @@ export const ExportModal: React.FC<ExportModalProps> = ({
               <span>Tải file .tex</span>
             </button>
 
-            <button
-              onClick={onCompilePdf}
-              disabled={isCompiling}
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg shadow-sm transition disabled:opacity-50"
-            >
-              {isCompiling ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Đang biên dịch PDF...</span>
-                </>
-              ) : (
-                <>
-                  <Printer className="w-4 h-4" />
-                  <span>Biên dịch PDF (TeX Live)</span>
-                </>
-              )}
-            </button>
           </div>
         </div>
       </div>

@@ -42,6 +42,8 @@ class Question(BaseModel):
     tikz_code: Optional[str] = Field(None, description="Mã TikZ hoặc tkz-tab (bảng biến thiên, hình không gian)")
     sympy_code: Optional[str] = Field(None, description="Đoạn mã SymPy để kiểm tra nghiệm/đáp án")
     verified: Optional[bool] = Field(False, description="Đã được kiểm chứng toán học bằng SymPy hay chưa")
+    template_id: Optional[str] = Field(None, description="Mã định danh template sinh câu hỏi")
+    rubric: Optional[Dict[str, float]] = Field(None, description="Thang điểm chi tiết cho câu tự luận")
 
 class ExamSlot(BaseModel):
     slot_id: str
@@ -67,6 +69,7 @@ class ExamMatrix(BaseModel):
     slots: List[ExamSlot] = Field(default_factory=list)
 
 class ExamPaper(BaseModel):
+    reference_sources: List[Dict[str, str]] = Field(default_factory=list)
     id: str
     title: str
     school_name: str = "SỞ GIÁO DỤC VÀ ĐÀO TẠO"

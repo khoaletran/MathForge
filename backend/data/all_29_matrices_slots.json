@@ -1,0 +1,5836 @@
+{
+  "matrix_12_thpt_2025": {
+    "grade": 12,
+    "title": "ĐỀ THI TỐT NGHIỆP TRUNG HỌC PHỔ THÔNG NĂM 2025",
+    "slots": [
+      {
+        "id": "thpt2025_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Ứng dụng đạo hàm: Tính đơn điệu của hàm số"
+      },
+      {
+        "id": "thpt2025_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Ứng dụng đạo hàm: Cực trị của hàm số"
+      },
+      {
+        "id": "thpt2025_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Ứng dụng đạo hàm: Giá trị lớn nhất, nhỏ nhất trên đoạn"
+      },
+      {
+        "id": "thpt2025_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Ứng dụng đạo hàm: Đường tiệm cận của đồ thị hàm số"
+      },
+      {
+        "id": "thpt2025_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Ứng dụng đạo hàm: Nhận dạng bảng biến thiên và đồ thị"
+      },
+      {
+        "id": "thpt2025_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Tọa độ vectơ trong không gian Oxyz"
+      },
+      {
+        "id": "thpt2025_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Phương trình mặt cầu cơ bản"
+      },
+      {
+        "id": "thpt2025_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Số đặc trưng đo mức độ phân tán mẫu ghép nhóm"
+      },
+      {
+        "id": "thpt2025_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Ứng dụng đạo hàm: Bài toán tương giao và đồ thị"
+      },
+      {
+        "id": "thpt2025_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Tích vô hướng và góc trong không gian Oxyz"
+      },
+      {
+        "id": "thpt2025_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Nguyên hàm và tích phân cơ bản"
+      },
+      {
+        "id": "thpt2025_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Xác suất có điều kiện cơ bản"
+      },
+      {
+        "id": "thpt2025_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Khảo sát tính biến thiên toàn diện và đồ thị hàm số"
+      },
+      {
+        "id": "thpt2025_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Phương trình mặt phẳng, đường thẳng và khoảng cách Oxyz"
+      },
+      {
+        "id": "thpt2025_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Ứng dụng tích phân tính diện tích, thể tích"
+      },
+      {
+        "id": "thpt2025_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Công thức xác suất toàn phần và công thức Bayes"
+      },
+      {
+        "id": "thpt2025_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "THONG_HIEU",
+        "pts": 0.5,
+        "topic": "Toán thực tế & Trải nghiệm",
+        "subtopic": "Bài toán tối ưu hóa / cực trị thực tế (chi phí, dung tích)"
+      },
+      {
+        "id": "thpt2025_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Số và Đại số",
+        "subtopic": "Ứng dụng tích phân tính thể tích vật thể tròn xoay"
+      },
+      {
+        "id": "thpt2025_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Mô hình hóa hình học không gian thực tế gắn hệ trục Oxyz"
+      },
+      {
+        "id": "thpt2025_p3_20",
+        "num": 20,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Ứng dụng xác suất trong kiểm định chất lượng y tế / kinh tế"
+      },
+      {
+        "id": "thpt2025_p3_21",
+        "num": 21,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Số và Đại số",
+        "subtopic": "Phương trình, bất phương trình chứa tham số m"
+      },
+      {
+        "id": "thpt2025_p3_22",
+        "num": 22,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Cực trị khoảng cách hình học giải tích Oxyz"
+      }
+    ]
+  },
+  "matrix_6_gk1": {
+    "grade": 6,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 1 - TOÁN 6",
+    "slots": [
+      {
+        "id": "m6_gk1_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Tập hợp và phần tử của tập hợp"
+      },
+      {
+        "id": "m6_gk1_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Các phép tính với số tự nhiên"
+      },
+      {
+        "id": "m6_gk1_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Lũy thừa với số mũ tự nhiên"
+      },
+      {
+        "id": "m6_gk1_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Quan hệ chia hết và tính chất chia hết"
+      },
+      {
+        "id": "m6_gk1_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Dấu hiệu chia hết cho 2, 3, 5, 9"
+      },
+      {
+        "id": "m6_gk1_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Số nguyên tố, hợp số"
+      },
+      {
+        "id": "m6_gk1_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Tập hợp số nguyên, số nguyên âm"
+      },
+      {
+        "id": "m6_gk1_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Thứ tự trong tập hợp các số nguyên"
+      },
+      {
+        "id": "m6_gk1_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Thứ tự thực hiện các phép tính"
+      },
+      {
+        "id": "m6_gk1_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Ước và bội; ƯCLN và BCNN"
+      },
+      {
+        "id": "m6_gk1_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Tìm ƯCLN và BCNN bằng phân tích thừa số nguyên tố"
+      },
+      {
+        "id": "m6_gk1_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Phép cộng và trừ hai số nguyên"
+      },
+      {
+        "id": "m6_gk1_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Viết tập hợp và thực hiện phép tính số tự nhiên (Bài 1a)"
+      },
+      {
+        "id": "m6_gk1_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Kiểm tra tính chia hết và phân tích ra thừa số nguyên tố (Bài 1b)"
+      },
+      {
+        "id": "m6_gk1_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Tính giá trị biểu thức hợp lý / thứ tự phép tính (Bài 2a)"
+      },
+      {
+        "id": "m6_gk1_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Phép cộng, trừ số nguyên và quy tắc dấu ngoặc (Bài 2b)"
+      },
+      {
+        "id": "m6_gk1_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Bài toán thực tiễn về số tự nhiên / chi phí mua hàng (Bài 3a)"
+      },
+      {
+        "id": "m6_gk1_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Bài toán thực tiễn ứng dụng ƯCLN, BCNN (Bài 3b)"
+      },
+      {
+        "id": "m6_gk1_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Tính chia hết nâng cao, chữ số tận cùng hoặc chứng minh (Bài 4)"
+      }
+    ]
+  },
+  "matrix_6_ck1": {
+    "grade": 6,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 1 - TOÁN 6",
+    "slots": [
+      {
+        "id": "m6_ck1_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Tập hợp và phép tính số tự nhiên"
+      },
+      {
+        "id": "m6_ck1_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Thứ tự thực hiện phép tính"
+      },
+      {
+        "id": "m6_ck1_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Dấu hiệu chia hết và số nguyên tố"
+      },
+      {
+        "id": "m6_ck1_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Tập hợp số nguyên, biểu diễn trên trục số"
+      },
+      {
+        "id": "m6_ck1_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. So sánh hai số nguyên"
+      },
+      {
+        "id": "m6_ck1_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Phép cộng, trừ hai số nguyên"
+      },
+      {
+        "id": "m6_ck1_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Tam giác đều, hình vuông, lục giác đều"
+      },
+      {
+        "id": "m6_ck1_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Hình chữ nhật, hình thoi, hình bình hành"
+      },
+      {
+        "id": "m6_ck1_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Phép nhân, chia lũy thừa cùng cơ số"
+      },
+      {
+        "id": "m6_ck1_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Tìm ƯCLN, BCNN"
+      },
+      {
+        "id": "m6_ck1_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Quy tắc dấu ngoặc và tính nhanh số nguyên"
+      },
+      {
+        "id": "m6_ck1_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Hình có trục đối xứng, tâm đối xứng"
+      },
+      {
+        "id": "m6_ck1_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Thực hiện phép tính số tự nhiên (Bài 1a)"
+      },
+      {
+        "id": "m6_ck1_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Thực hiện phép tính với số nguyên (Bài 1b)"
+      },
+      {
+        "id": "m6_ck1_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Tìm ước chung, bội chung của các số (Bài 2a)"
+      },
+      {
+        "id": "m6_ck1_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Tìm số nguyên x thỏa mãn đẳng thức (Bài 2b)"
+      },
+      {
+        "id": "m6_ck1_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Bài toán thực tiễn về số nguyên âm (nhiệt độ, độ cao, lỗ lãi) (Bài 3a)"
+      },
+      {
+        "id": "m6_ck1_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Tính chu vi, diện tích hình chữ nhật, hình thang, lát gạch (Bài 3b)"
+      },
+      {
+        "id": "m6_ck1_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Bài toán chia hết hoặc tìm giá trị nguyên lớn nhất/nhỏ nhất (Bài 4)"
+      }
+    ]
+  },
+  "matrix_6_gk2": {
+    "grade": 6,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 2 - TOÁN 6",
+    "slots": [
+      {
+        "id": "m6_gk2_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Khái niệm phân số, phân số bằng nhau"
+      },
+      {
+        "id": "m6_gk2_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tính chất cơ bản của phân số, rút gọn phân số"
+      },
+      {
+        "id": "m6_gk2_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. So sánh hai phân số"
+      },
+      {
+        "id": "m6_gk2_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Phép nhân hai phân số"
+      },
+      {
+        "id": "m6_gk2_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Phép chia hai phân số"
+      },
+      {
+        "id": "m6_gk2_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Hỗn số dương"
+      },
+      {
+        "id": "m6_gk2_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Số thập phân và số đối của số thập phân"
+      },
+      {
+        "id": "m6_gk2_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. So sánh các số thập phân"
+      },
+      {
+        "id": "m6_gk2_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Cộng, trừ hai phân số khác mẫu"
+      },
+      {
+        "id": "m6_gk2_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tính hợp lý biểu thức phân số"
+      },
+      {
+        "id": "m6_gk2_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tìm phân số của một số cho trước"
+      },
+      {
+        "id": "m6_gk2_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Các phép tính cộng, trừ, nhân, chia số thập phân"
+      },
+      {
+        "id": "m6_gk2_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Thực hiện phép tính cộng trừ phân số (Bài 1a)"
+      },
+      {
+        "id": "m6_gk2_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Thực hiện phép tính nhân chia phân số (Bài 1b)"
+      },
+      {
+        "id": "m6_gk2_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tính giá trị biểu thức phân số hợp lý (Bài 2a)"
+      },
+      {
+        "id": "m6_gk2_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Tìm x trong biểu thức chứa số thập phân (Bài 2b)"
+      },
+      {
+        "id": "m6_gk2_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Bài toán thực tiễn về phân số (Bài 3a)"
+      },
+      {
+        "id": "m6_gk2_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Bài toán thực tiễn tính tiền, giảm giá phần trăm (Bài 3b)"
+      },
+      {
+        "id": "m6_gk2_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tính tổng dãy phân số theo quy luật (Bài 4)"
+      }
+    ]
+  },
+  "matrix_6_ck2": {
+    "grade": 6,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 2 - TOÁN 6",
+    "slots": [
+      {
+        "id": "m6_ck2_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Khái niệm phân số và phân số bằng nhau"
+      },
+      {
+        "id": "m6_ck2_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. So sánh phân số"
+      },
+      {
+        "id": "m6_ck2_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Số thập phân và làm tròn số"
+      },
+      {
+        "id": "m6_ck2_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Tỉ số và tỉ số phần trăm"
+      },
+      {
+        "id": "m6_ck2_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 8. Điểm, đường thẳng, ba điểm thẳng hàng"
+      },
+      {
+        "id": "m6_ck2_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 8. Đoạn thẳng, độ dài đoạn thẳng"
+      },
+      {
+        "id": "m6_ck2_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 9. Dữ liệu và thu thập dữ liệu"
+      },
+      {
+        "id": "m6_ck2_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 9. Bảng số liệu và biểu đồ cột"
+      },
+      {
+        "id": "m6_ck2_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Các phép tính với phân số"
+      },
+      {
+        "id": "m6_ck2_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Phép tính số thập phân và bài toán phần trăm"
+      },
+      {
+        "id": "m6_ck2_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 8. Góc, số đo góc, trung điểm đoạn thẳng"
+      },
+      {
+        "id": "m6_ck2_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 9. Xác suất thực nghiệm trong trò chơi đơn giản"
+      },
+      {
+        "id": "m6_ck2_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Thực hiện phép tính phân số (Bài 1a)"
+      },
+      {
+        "id": "m6_ck2_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 8. Nhận dạng điểm thuộc đường thẳng, đo góc (Bài 1b)"
+      },
+      {
+        "id": "m6_ck2_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Tìm x liên quan đến số thập phân hoặc phân số (Bài 2a)"
+      },
+      {
+        "id": "m6_ck2_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 8. Tính độ dài đoạn thẳng và chứng minh trung điểm (Bài 2b)"
+      },
+      {
+        "id": "m6_ck2_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Bài toán thực tiễn mua bán giảm giá hoặc lãi suất (Bài 3a)"
+      },
+      {
+        "id": "m6_ck2_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 9. Đọc biểu đồ cột và tính xác suất thực nghiệm (Bài 3b)"
+      },
+      {
+        "id": "m6_ck2_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Dãy phân số quy luật hoặc bất đẳng thức phân số (Bài 4)"
+      }
+    ]
+  },
+  "matrix_7_gk1": {
+    "grade": 7,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 1 - TOÁN 7",
+    "slots": [
+      {
+        "id": "m7_gk1_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Tập hợp các số hữu tỉ, biểu diễn trên trục số"
+      },
+      {
+        "id": "m7_gk1_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Cộng, trừ, nhân, chia số hữu tỉ"
+      },
+      {
+        "id": "m7_gk1_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Lũy thừa với số mũ tự nhiên của số hữu tỉ"
+      },
+      {
+        "id": "m7_gk1_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Khái niệm số thập phân vô hạn tuần hoàn, số vô tỉ"
+      },
+      {
+        "id": "m7_gk1_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Căn bậc hai số học"
+      },
+      {
+        "id": "m7_gk1_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Tập hợp số thực và giá trị tuyệt đối"
+      },
+      {
+        "id": "m7_gk1_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Góc ở vị trí đặc biệt (kề bù, đối đỉnh)"
+      },
+      {
+        "id": "m7_gk1_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Tia phân giác của một góc"
+      },
+      {
+        "id": "m7_gk1_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Quy tắc dấu ngoặc và chuyển vế"
+      },
+      {
+        "id": "m7_gk1_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. So sánh và làm tròn số thực"
+      },
+      {
+        "id": "m7_gk1_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Tính giá trị biểu thức chứa căn bậc hai"
+      },
+      {
+        "id": "m7_gk1_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Hai đường thẳng song song và dấu hiệu nhận biết"
+      },
+      {
+        "id": "m7_gk1_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Thực hiện phép tính số hữu tỉ (Bài 1a)"
+      },
+      {
+        "id": "m7_gk1_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Tính căn bậc hai số học và giá trị tuyệt đối (Bài 1b)"
+      },
+      {
+        "id": "m7_gk1_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Tính giá trị biểu thức hợp lý / lũy thừa (Bài 2a)"
+      },
+      {
+        "id": "m7_gk1_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Tính số đo góc kề bù, đối đỉnh, so le trong (Bài 2b)"
+      },
+      {
+        "id": "m7_gk1_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Tìm x thỏa mãn đẳng thức số hữu tỉ (Bài 3a)"
+      },
+      {
+        "id": "m7_gk1_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Chứng minh hai đường thẳng song song hoặc tia phân giác (Bài 3b)"
+      },
+      {
+        "id": "m7_gk1_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Bài toán cực trị giá trị tuyệt đối hoặc số thực nâng cao (Bài 4)"
+      }
+    ]
+  },
+  "matrix_7_ck1": {
+    "grade": 7,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 1 - TOÁN 7",
+    "slots": [
+      {
+        "id": "m7_ck1_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Số hữu tỉ và các phép tính"
+      },
+      {
+        "id": "m7_ck1_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Lũy thừa của số hữu tỉ"
+      },
+      {
+        "id": "m7_ck1_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Căn bậc hai số học và số thực"
+      },
+      {
+        "id": "m7_ck1_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Góc đối đỉnh, tia phân giác"
+      },
+      {
+        "id": "m7_ck1_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Tổng các góc trong một tam giác"
+      },
+      {
+        "id": "m7_ck1_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Hai tam giác bằng nhau"
+      },
+      {
+        "id": "m7_ck1_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 5. Thu thập và phân loại dữ liệu"
+      },
+      {
+        "id": "m7_ck1_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 5. Biểu diễn dữ liệu trên biểu đồ"
+      },
+      {
+        "id": "m7_ck1_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Tính hợp lý biểu thức số hữu tỉ"
+      },
+      {
+        "id": "m7_ck1_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Làm tròn số và ước lượng kết quả"
+      },
+      {
+        "id": "m7_ck1_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Định lí và chứng minh định lí về đường thẳng song song"
+      },
+      {
+        "id": "m7_ck1_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Các trường hợp bằng nhau c-c-c, c-g-c, g-c-g"
+      },
+      {
+        "id": "m7_ck1_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Thực hiện phép tính số hữu tỉ (Bài 1a)"
+      },
+      {
+        "id": "m7_ck1_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Nhận biết tam giác cân, tam giác đều (Bài 1b)"
+      },
+      {
+        "id": "m7_ck1_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Tìm x liên quan đến căn bậc hai hoặc số thực (Bài 2a)"
+      },
+      {
+        "id": "m7_ck1_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Chứng minh hai tam giác bằng nhau (Bài 2b)"
+      },
+      {
+        "id": "m7_ck1_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Chứng minh hai đường thẳng vuông góc hoặc song song (Bài 3a)"
+      },
+      {
+        "id": "m7_ck1_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 5. Đọc và phân tích biểu đồ quạt tròn, biểu đồ đoạn thẳng (Bài 3b)"
+      },
+      {
+        "id": "m7_ck1_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Bài toán chứng minh hình học tam giác nâng cao (Bài 4)"
+      }
+    ]
+  },
+  "matrix_7_gk2": {
+    "grade": 7,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 2 - TOÁN 7",
+    "slots": [
+      {
+        "id": "m7_gk2_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tỉ lệ thức và các tính chất"
+      },
+      {
+        "id": "m7_gk2_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tính chất của dãy tỉ số bằng nhau"
+      },
+      {
+        "id": "m7_gk2_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Đại lượng tỉ lệ thuận"
+      },
+      {
+        "id": "m7_gk2_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Đại lượng tỉ lệ nghịch"
+      },
+      {
+        "id": "m7_gk2_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Biểu thức số và biểu thức đại số"
+      },
+      {
+        "id": "m7_gk2_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Đa thức một biến, bậc của đa thức"
+      },
+      {
+        "id": "m7_gk2_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Các hệ số của đa thức một biến"
+      },
+      {
+        "id": "m7_gk2_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Nghiệm của đa thức một biến"
+      },
+      {
+        "id": "m7_gk2_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tìm hai số biết tỉ số và tổng hoặc hiệu"
+      },
+      {
+        "id": "m7_gk2_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Bài toán chia theo tỉ lệ thuận, nghịch"
+      },
+      {
+        "id": "m7_gk2_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Tính giá trị của đa thức một biến"
+      },
+      {
+        "id": "m7_gk2_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Cộng, trừ hai đa thức một biến"
+      },
+      {
+        "id": "m7_gk2_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tìm x trong tỉ lệ thức đơn giản (Bài 1a)"
+      },
+      {
+        "id": "m7_gk2_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Thu gọn và sắp xếp đa thức một biến (Bài 1b)"
+      },
+      {
+        "id": "m7_gk2_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Áp dụng tính chất dãy tỉ số bằng nhau tìm x, y (Bài 2a)"
+      },
+      {
+        "id": "m7_gk2_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Thực hiện phép cộng, trừ đa thức một biến (Bài 2b)"
+      },
+      {
+        "id": "m7_gk2_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Bài toán thực tế về đại lượng tỉ lệ (Bài 3a)"
+      },
+      {
+        "id": "m7_gk2_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Tìm nghiệm của đa thức một biến (Bài 3b)"
+      },
+      {
+        "id": "m7_gk2_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Chứng minh đa thức không có nghiệm hoặc dãy tỉ số nâng cao (Bài 4)"
+      }
+    ]
+  },
+  "matrix_7_ck2": {
+    "grade": 7,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 2 - TOÁN 7",
+    "slots": [
+      {
+        "id": "m7_ck2_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tỉ lệ thức và dãy tỉ số bằng nhau"
+      },
+      {
+        "id": "m7_ck2_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Đa thức một biến và nghiệm"
+      },
+      {
+        "id": "m7_ck2_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Biến cố ngẫu nhiên, biến cố chắc chắn, không thể"
+      },
+      {
+        "id": "m7_ck2_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Quan hệ giữa góc và cạnh đối diện trong tam giác"
+      },
+      {
+        "id": "m7_ck2_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Quan hệ giữa ba cạnh của một tam giác"
+      },
+      {
+        "id": "m7_ck2_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Sự đồng quy của ba đường trung tuyến, phân giác"
+      },
+      {
+        "id": "m7_ck2_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 10. Hình hộp chữ nhật và hình lập phương"
+      },
+      {
+        "id": "m7_ck2_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 10. Lăng trụ đứng tam giác, lăng trụ đứng tứ giác"
+      },
+      {
+        "id": "m7_ck2_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Bài toán tỉ lệ thực tiễn"
+      },
+      {
+        "id": "m7_ck2_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Nhân, chia đa thức một biến"
+      },
+      {
+        "id": "m7_ck2_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Xác suất của biến cố trong trò chơi gieo xúc xắc"
+      },
+      {
+        "id": "m7_ck2_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Tính chất đường trung trực của đoạn thẳng"
+      },
+      {
+        "id": "m7_ck2_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tìm x từ dãy tỉ số bằng nhau (Bài 1a)"
+      },
+      {
+        "id": "m7_ck2_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Nhận biết quan hệ giữa đường vuông góc và đường xiên (Bài 1b)"
+      },
+      {
+        "id": "m7_ck2_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Thực hiện phép cộng trừ nhân đa thức một biến (Bài 2a)"
+      },
+      {
+        "id": "m7_ck2_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Tính xác suất của biến cố ngẫu nhiên (Bài 2b)"
+      },
+      {
+        "id": "m7_ck2_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Tìm nghiệm đa thức hoặc chứng minh chia hết (Bài 3a)"
+      },
+      {
+        "id": "m7_ck2_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 10. Tính diện tích xung quanh, thể tích hình lăng trụ / hình hộp (Bài 3b)"
+      },
+      {
+        "id": "m7_ck2_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Bài toán bất đẳng thức tam giác hoặc điểm đồng quy nâng cao (Bài 4)"
+      }
+    ]
+  },
+  "matrix_8_gk1": {
+    "grade": 8,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 1 - TOÁN 8",
+    "slots": [
+      {
+        "id": "m8_gk1_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Đơn thức nhiều biến, đơn thức thu gọn"
+      },
+      {
+        "id": "m8_gk1_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Đa thức nhiều biến và bậc của đa thức"
+      },
+      {
+        "id": "m8_gk1_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Đơn thức đồng dạng"
+      },
+      {
+        "id": "m8_gk1_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Bình phương của một tổng và một hiệu"
+      },
+      {
+        "id": "m8_gk1_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Hiệu hai bình phương"
+      },
+      {
+        "id": "m8_gk1_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Lập phương của một tổng và một hiệu"
+      },
+      {
+        "id": "m8_gk1_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Tứ giác và tổng các góc của một tứ giác"
+      },
+      {
+        "id": "m8_gk1_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Hình thang, hình thang cân và tính chất"
+      },
+      {
+        "id": "m8_gk1_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Phép nhân và chia đa thức cho đơn thức"
+      },
+      {
+        "id": "m8_gk1_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Phân tích đa thức thành nhân tử bằng đặt nhân tử chung"
+      },
+      {
+        "id": "m8_gk1_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Phân tích đa thức bằng dùng hằng đẳng thức"
+      },
+      {
+        "id": "m8_gk1_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Dấu hiệu nhận biết hình thang cân"
+      },
+      {
+        "id": "m8_gk1_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Thu gọn đa thức nhiều biến (Bài 1a)"
+      },
+      {
+        "id": "m8_gk1_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Khai triển hằng đẳng thức (Bài 1b)"
+      },
+      {
+        "id": "m8_gk1_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Thực hiện phép nhân, chia đa thức (Bài 2a)"
+      },
+      {
+        "id": "m8_gk1_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Tính số đo các góc của tứ giác, hình thang cân (Bài 2b)"
+      },
+      {
+        "id": "m8_gk1_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Phân tích đa thức thành nhân tử nhóm hạng tử (Bài 3a)"
+      },
+      {
+        "id": "m8_gk1_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Chứng minh hình thang cân và tính độ dài cạnh (Bài 3b)"
+      },
+      {
+        "id": "m8_gk1_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Tìm giá trị lớn nhất, nhỏ nhất của biểu thức bậc hai (Bài 4)"
+      }
+    ]
+  },
+  "matrix_8_ck1": {
+    "grade": 8,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 1 - TOÁN 8",
+    "slots": [
+      {
+        "id": "m8_ck1_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Đa thức nhiều biến và các phép toán"
+      },
+      {
+        "id": "m8_ck1_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Bảy hằng đẳng thức đáng nhớ"
+      },
+      {
+        "id": "m8_ck1_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Phân tích đa thức thành nhân tử"
+      },
+      {
+        "id": "m8_ck1_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Tổng số đo các góc của một tứ giác"
+      },
+      {
+        "id": "m8_ck1_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Hình bình hành, hình chữ nhật"
+      },
+      {
+        "id": "m8_ck1_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Định lí Thalès trong tam giác"
+      },
+      {
+        "id": "m8_ck1_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Đường trung bình của tam giác"
+      },
+      {
+        "id": "m8_ck1_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 5. Thu thập và phân loại dữ liệu"
+      },
+      {
+        "id": "m8_ck1_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Chia đa thức cho đơn thức"
+      },
+      {
+        "id": "m8_ck1_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Hình thoi, hình vuông và dấu hiệu nhận biết"
+      },
+      {
+        "id": "m8_ck1_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Tính chất đường phân giác trong tam giác"
+      },
+      {
+        "id": "m8_ck1_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 5. Lựa chọn biểu đồ thích hợp biểu diễn dữ liệu"
+      },
+      {
+        "id": "m8_ck1_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Rút gọn biểu thức đại số (Bài 1a)"
+      },
+      {
+        "id": "m8_ck1_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Dùng tính chất hai cạnh đối bằng nhau của hình bình hành (Bài 1b)"
+      },
+      {
+        "id": "m8_ck1_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Phân tích đa thức thành nhân tử và tìm x (Bài 2a)"
+      },
+      {
+        "id": "m8_ck1_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Áp dụng định lí Thalès tính độ dài đoạn thẳng (Bài 2b)"
+      },
+      {
+        "id": "m8_ck1_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Chứng minh tứ giác là hình chữ nhật, hình thoi (Bài 3a)"
+      },
+      {
+        "id": "m8_ck1_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 5. Phân tích biểu đồ và nhận xét xu hướng dữ liệu (Bài 3b)"
+      },
+      {
+        "id": "m8_ck1_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Bài toán chứng minh hình học đường trung bình nâng cao (Bài 4)"
+      }
+    ]
+  },
+  "matrix_8_gk2": {
+    "grade": 8,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 2 - TOÁN 8",
+    "slots": [
+      {
+        "id": "m8_gk2_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Khái niệm phân thức đại số"
+      },
+      {
+        "id": "m8_gk2_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tính chất cơ bản của phân thức đại số"
+      },
+      {
+        "id": "m8_gk2_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Rút gọn phân thức đại số"
+      },
+      {
+        "id": "m8_gk2_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Quy đồng mẫu thức nhiều phân thức"
+      },
+      {
+        "id": "m8_gk2_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Phương trình bậc nhất một ẩn và cách giải"
+      },
+      {
+        "id": "m8_gk2_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Phương trình đưa về dạng ax + b = 0"
+      },
+      {
+        "id": "m8_gk2_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Khái niệm hàm số và đồ thị hàm số"
+      },
+      {
+        "id": "m8_gk2_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Hàm số bậc nhất y = ax + b"
+      },
+      {
+        "id": "m8_gk2_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Phép cộng và trừ các phân thức đại số"
+      },
+      {
+        "id": "m8_gk2_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Phép nhân và chia các phân thức đại số"
+      },
+      {
+        "id": "m8_gk2_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Giải phương trình bậc nhất một ẩn"
+      },
+      {
+        "id": "m8_gk2_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Hệ số góc của đường thẳng y = ax + b"
+      },
+      {
+        "id": "m8_gk2_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Rút gọn phân thức đại số đơn giản (Bài 1a)"
+      },
+      {
+        "id": "m8_gk2_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Giải phương trình bậc nhất một ẩn (Bài 1b)"
+      },
+      {
+        "id": "m8_gk2_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Thực hiện phép tính phân thức đại số (Bài 2a)"
+      },
+      {
+        "id": "m8_gk2_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Tìm điều kiện của m để hàm số bậc nhất đồng biến/nghịch biến (Bài 2b)"
+      },
+      {
+        "id": "m8_gk2_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Rút gọn biểu thức hữu tỉ và tính giá trị nguyên (Bài 3a)"
+      },
+      {
+        "id": "m8_gk2_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Giải bài toán bằng cách lập phương trình (toán chuyển động, năng suất) (Bài 3b)"
+      },
+      {
+        "id": "m8_gk2_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Bài toán cực trị đồ thị hoặc tham số m nâng cao (Bài 4)"
+      }
+    ]
+  },
+  "matrix_8_ck2": {
+    "grade": 8,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 2 - TOÁN 8",
+    "slots": [
+      {
+        "id": "m8_ck2_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Phân thức đại số và điều kiện xác định"
+      },
+      {
+        "id": "m8_ck2_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Phương trình bậc nhất một ẩn"
+      },
+      {
+        "id": "m8_ck2_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Đồ thị hàm số bậc nhất y = ax + b"
+      },
+      {
+        "id": "m8_ck2_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Kết quả có thể và kết quả thuận lợi"
+      },
+      {
+        "id": "m8_ck2_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Hai tam giác đồng dạng"
+      },
+      {
+        "id": "m8_ck2_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Trường hợp đồng dạng c-c-c, c-g-c"
+      },
+      {
+        "id": "m8_ck2_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Trường hợp đồng dạng góc-góc"
+      },
+      {
+        "id": "m8_ck2_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 10. Hình chóp tam giác đều, chóp tứ giác đều"
+      },
+      {
+        "id": "m8_ck2_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Rút gọn biểu thức phân thức"
+      },
+      {
+        "id": "m8_ck2_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Tính xác suất của biến cố ngẫu nhiên"
+      },
+      {
+        "id": "m8_ck2_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Các trường hợp đồng dạng của tam giác vuông"
+      },
+      {
+        "id": "m8_ck2_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 10. Diện tích xung quanh, thể tích hình chóp"
+      },
+      {
+        "id": "m8_ck2_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Rút gọn phân thức đại số (Bài 1a)"
+      },
+      {
+        "id": "m8_ck2_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Nhận biết các cặp tam giác đồng dạng (Bài 1b)"
+      },
+      {
+        "id": "m8_ck2_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Giải phương trình bậc nhất một ẩn (Bài 2a)"
+      },
+      {
+        "id": "m8_ck2_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 10. Tính diện tích xung quanh hoặc thể tích hình chóp (Bài 2b)"
+      },
+      {
+        "id": "m8_ck2_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 7. Giải bài toán bằng cách lập phương trình (Bài 3a)"
+      },
+      {
+        "id": "m8_ck2_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Tính xác suất thực tế của biến cố (Bài 3b)"
+      },
+      {
+        "id": "m8_ck2_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Chứng minh tam giác đồng dạng và đẳng thức hình học nâng cao (Bài 4)"
+      }
+    ]
+  },
+  "matrix_9_gk1": {
+    "grade": 9,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 1 - TOÁN 9",
+    "slots": [
+      {
+        "id": "m9_gk1_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Phương trình bậc nhất hai ẩn"
+      },
+      {
+        "id": "m9_gk1_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Khái niệm hệ hai phương trình bậc nhất hai ẩn"
+      },
+      {
+        "id": "m9_gk1_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Giải hệ phương trình bằng phương pháp thế"
+      },
+      {
+        "id": "m9_gk1_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Phương trình quy về phương trình bậc nhất một ẩn"
+      },
+      {
+        "id": "m9_gk1_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Bất đẳng thức và tính chất"
+      },
+      {
+        "id": "m9_gk1_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Bất phương trình bậc nhất một ẩn"
+      },
+      {
+        "id": "m9_gk1_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Khái niệm căn bậc hai số học"
+      },
+      {
+        "id": "m9_gk1_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Căn bậc ba của số thực"
+      },
+      {
+        "id": "m9_gk1_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Giải hệ phương trình bằng phương pháp cộng đại số"
+      },
+      {
+        "id": "m9_gk1_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Giải bất phương trình bậc nhất một ẩn"
+      },
+      {
+        "id": "m9_gk1_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Biểu diễn tập nghiệm trên trục số"
+      },
+      {
+        "id": "m9_gk1_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Khai căn bậc hai của một bình phương"
+      },
+      {
+        "id": "m9_gk1_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Giải hệ hai phương trình bậc nhất hai ẩn cơ bản (Bài 1a)"
+      },
+      {
+        "id": "m9_gk1_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Giải bất phương trình bậc nhất một ẩn (Bài 1b)"
+      },
+      {
+        "id": "m9_gk1_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Tìm điều kiện nghiệm của hệ phương trình (Bài 2a)"
+      },
+      {
+        "id": "m9_gk1_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Rút gọn biểu thức chứa căn bậc hai (Bài 2b)"
+      },
+      {
+        "id": "m9_gk1_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Giải bài toán bằng cách lập hệ phương trình (Bài 3a)"
+      },
+      {
+        "id": "m9_gk1_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Giải phương trình quy về bậc nhất chứa dấu giá trị tuyệt đối (Bài 3b)"
+      },
+      {
+        "id": "m9_gk1_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Chứng minh bất đẳng thức Cauchy hoặc tìm GTNN/GTLN (Bài 4)"
+      }
+    ]
+  },
+  "matrix_9_ck1": {
+    "grade": 9,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 1 - TOÁN 9",
+    "slots": [
+      {
+        "id": "m9_ck1_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Hệ phương trình bậc nhất hai ẩn"
+      },
+      {
+        "id": "m9_ck1_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Bất đẳng thức và bất phương trình"
+      },
+      {
+        "id": "m9_ck1_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Phương trình tích"
+      },
+      {
+        "id": "m9_ck1_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Căn bậc hai và điều kiện xác định"
+      },
+      {
+        "id": "m9_ck1_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Căn bậc ba"
+      },
+      {
+        "id": "m9_ck1_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Tỉ số lượng giác của góc nhọn (sin, cos, tan, cot)"
+      },
+      {
+        "id": "m9_ck1_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Hệ thức giữa cạnh và góc trong tam giác vuông"
+      },
+      {
+        "id": "m9_ck1_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Đường tròn và tính chất đối xứng"
+      },
+      {
+        "id": "m9_ck1_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Giải hệ phương trình chứa ẩn ở mẫu"
+      },
+      {
+        "id": "m9_ck1_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Trục căn thức ở mẫu và rút gọn căn"
+      },
+      {
+        "id": "m9_ck1_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Giải tam giác vuông và ứng dụng thực tiễn"
+      },
+      {
+        "id": "m9_ck1_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Vị trí tương đối của đường thẳng và đường tròn, tiếp tuyến"
+      },
+      {
+        "id": "m9_ck1_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Giải hệ phương trình bậc nhất hai ẩn (Bài 1a)"
+      },
+      {
+        "id": "m9_ck1_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 3. Tính giá trị biểu thức căn thức (Bài 1b)"
+      },
+      {
+        "id": "m9_ck1_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 2. Giải phương trình quy về bậc nhất (Bài 2a)"
+      },
+      {
+        "id": "m9_ck1_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Tính tỉ số lượng giác và cạnh tam giác vuông (Bài 2b)"
+      },
+      {
+        "id": "m9_ck1_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 1. Giải bài toán bằng cách lập hệ phương trình (toán thực tế) (Bài 3a)"
+      },
+      {
+        "id": "m9_ck1_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Bài toán thực tế đo chiều cao tòa nhà / góc nghiêng (Bài 3b)"
+      },
+      {
+        "id": "m9_ck1_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Chứng minh tiếp tuyến đường tròn và hệ thức hình học (Bài 4)"
+      }
+    ]
+  },
+  "matrix_9_gk2": {
+    "grade": 9,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 2 - TOÁN 9",
+    "slots": [
+      {
+        "id": "m9_gk2_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Hàm số y = ax² (a khác 0) và tính chất"
+      },
+      {
+        "id": "m9_gk2_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Đồ thị của hàm số y = ax²"
+      },
+      {
+        "id": "m9_gk2_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Phương trình bậc hai một ẩn ax² + bx + c = 0"
+      },
+      {
+        "id": "m9_gk2_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Công thức nghiệm của phương trình bậc hai"
+      },
+      {
+        "id": "m9_gk2_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Công thức nghiệm thu gọn"
+      },
+      {
+        "id": "m9_gk2_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Định lí Viète và ứng dụng nhẩm nghiệm"
+      },
+      {
+        "id": "m9_gk2_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 7. Tần số và bảng tần số"
+      },
+      {
+        "id": "m9_gk2_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 7. Tần số tương đối và biểu đồ tần số tương đối"
+      },
+      {
+        "id": "m9_gk2_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tọa độ giao điểm của parabol và đường thẳng"
+      },
+      {
+        "id": "m9_gk2_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tìm hai số biết tổng và tích"
+      },
+      {
+        "id": "m9_gk2_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Giải bài toán bằng cách lập phương trình bậc hai"
+      },
+      {
+        "id": "m9_gk2_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 7. Bảng tần số ghép nhóm và biểu đồ cột ghép nhóm"
+      },
+      {
+        "id": "m9_gk2_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Vẽ parabol y = ax² và tìm điểm thuộc đồ thị (Bài 1a)"
+      },
+      {
+        "id": "m9_gk2_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Giải phương trình bậc hai một ẩn cơ bản (Bài 1b)"
+      },
+      {
+        "id": "m9_gk2_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Áp dụng định lí Viète tính giá trị biểu thức nghiệm (Bài 2a)"
+      },
+      {
+        "id": "m9_gk2_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 7. Lập bảng tần số và vẽ biểu đồ hình quạt/đoạn thẳng (Bài 2b)"
+      },
+      {
+        "id": "m9_gk2_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Giải bài toán bằng cách lập phương trình bậc hai (Bài 3a)"
+      },
+      {
+        "id": "m9_gk2_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 7. Phân tích bảng tần số ghép nhóm trong thực tế (Bài 3b)"
+      },
+      {
+        "id": "m9_gk2_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tìm tham số m để phương trình bậc hai có nghiệm thỏa mãn điều kiện (Bài 4)"
+      }
+    ]
+  },
+  "matrix_9_ck2": {
+    "grade": 9,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 2 - TOÁN 9 (THI VÀO 10)",
+    "slots": [
+      {
+        "id": "m9_ck2_tn_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Hàm số y = ax² và tính đồng biến nghịch biến"
+      },
+      {
+        "id": "m9_ck2_tn_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Phương trình bậc hai một ẩn"
+      },
+      {
+        "id": "m9_ck2_tn_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Định lí Viète"
+      },
+      {
+        "id": "m9_ck2_tn_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 7. Tần số và tần số tương đối"
+      },
+      {
+        "id": "m9_ck2_tn_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Không gian mẫu và biến cố"
+      },
+      {
+        "id": "m9_ck2_tn_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Góc ở tâm và góc nội tiếp đường tròn"
+      },
+      {
+        "id": "m9_ck2_tn_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Đường tròn ngoại tiếp và nội tiếp tam giác"
+      },
+      {
+        "id": "m9_ck2_tn_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 10. Hình trụ, hình nón, hình cầu"
+      },
+      {
+        "id": "m9_ck2_tn_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Tương giao Parabol và đường thẳng y = mx + n"
+      },
+      {
+        "id": "m9_ck2_tn_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Bài toán lập phương trình bậc hai"
+      },
+      {
+        "id": "m9_ck2_tn_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Tính xác suất của biến cố trong mô hình đơn giản"
+      },
+      {
+        "id": "m9_ck2_tn_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Tứ giác nội tiếp đường tròn và tính chất"
+      },
+      {
+        "id": "m9_ck2_tl_13",
+        "num": 13,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Giải phương trình bậc hai và tìm tọa độ giao điểm (Bài 1a)"
+      },
+      {
+        "id": "m9_ck2_tl_14",
+        "num": 14,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Tính số đo cung và góc nội tiếp (Bài 1b)"
+      },
+      {
+        "id": "m9_ck2_tl_15",
+        "num": 15,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Ứng dụng hệ thức Viète tìm m thỏa mãn đẳng thức (Bài 2a)"
+      },
+      {
+        "id": "m9_ck2_tl_16",
+        "num": 16,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Tính xác suất biến cố (Bài 2b)"
+      },
+      {
+        "id": "m9_ck2_tl_17",
+        "num": 17,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 9. Chứng minh tứ giác nội tiếp đường tròn (Bài 3a)"
+      },
+      {
+        "id": "m9_ck2_tl_18",
+        "num": 18,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 10. Tính diện tích, thể tích hình trụ/nón/cầu thực tế (Bài 3b)"
+      },
+      {
+        "id": "m9_ck2_tl_19",
+        "num": 19,
+        "part": 2,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Số và Đại số",
+        "subtopic": "Chương 6. Bài toán cực trị đại số hoặc bất đẳng thức vào lớp 10 (Bài 4)"
+      }
+    ]
+  },
+  "matrix_10_gk1": {
+    "grade": 10,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 1 - TOÁN 10",
+    "slots": [
+      {
+        "id": "m10_gk1_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Mệnh đề toán học"
+      },
+      {
+        "id": "m10_gk1_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tập hợp và các phép toán giao, hợp"
+      },
+      {
+        "id": "m10_gk1_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Các tập hợp số"
+      },
+      {
+        "id": "m10_gk1_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Bất phương trình bậc nhất hai ẩn"
+      },
+      {
+        "id": "m10_gk1_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Biểu diễn miền nghiệm của bất phương trình bậc nhất hai ẩn"
+      },
+      {
+        "id": "m10_gk1_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Hệ bất phương trình bậc nhất hai ẩn"
+      },
+      {
+        "id": "m10_gk1_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Giá trị lượng giác của một góc từ 0 đến 180 độ"
+      },
+      {
+        "id": "m10_gk1_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Định lí côsin trong tam giác"
+      },
+      {
+        "id": "m10_gk1_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Các phép toán trên tập hợp con của R"
+      },
+      {
+        "id": "m10_gk1_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Miền nghiệm của hệ bất phương trình bậc nhất hai ẩn"
+      },
+      {
+        "id": "m10_gk1_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Bài toán tìm giá trị lớn nhất, nhỏ nhất trên miền đa giác"
+      },
+      {
+        "id": "m10_gk1_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Định lí sin và công thức tính diện tích tam giác"
+      },
+      {
+        "id": "m10_gk1_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Phép toán tập hợp và điều kiện chứa tham số"
+      },
+      {
+        "id": "m10_gk1_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Miền nghiệm hệ bất phương trình bậc nhất hai ẩn và ứng dụng thực tiễn"
+      },
+      {
+        "id": "m10_gk1_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Giải tam giác và tính bán kính đường tròn ngoại tiếp, nội tiếp"
+      },
+      {
+        "id": "m10_gk1_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Bài toán quy hoạch tuyến tính tối ưu hóa chi phí sản xuất"
+      },
+      {
+        "id": "m10_gk1_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Chứng minh mệnh đề và quan hệ tập hợp (Bài 1)"
+      },
+      {
+        "id": "m10_gk1_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Ứng dụng giải tam giác vào bài toán đo đạc khoảng cách thực tế (Bài 2)"
+      },
+      {
+        "id": "m10_gk1_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Bài toán tối ưu hóa hệ bất phương trình hai ẩn chứa tham số (Bài 3)"
+      }
+    ]
+  },
+  "matrix_10_ck1": {
+    "grade": 10,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 1 - TOÁN 10",
+    "slots": [
+      {
+        "id": "m10_ck1_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Mệnh đề và tập hợp"
+      },
+      {
+        "id": "m10_ck1_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Bất phương trình bậc nhất hai ẩn"
+      },
+      {
+        "id": "m10_ck1_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Hệ bất phương trình bậc nhất hai ẩn"
+      },
+      {
+        "id": "m10_ck1_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Định lí côsin và định lí sin"
+      },
+      {
+        "id": "m10_ck1_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Các công thức tính diện tích tam giác"
+      },
+      {
+        "id": "m10_ck1_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Khái niệm vectơ, hai vectơ cùng phương"
+      },
+      {
+        "id": "m10_ck1_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Tổng và hiệu của hai vectơ"
+      },
+      {
+        "id": "m10_ck1_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 5. Số gần đúng và sai số"
+      },
+      {
+        "id": "m10_ck1_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Bài toán thực tiễn hệ bất phương trình"
+      },
+      {
+        "id": "m10_ck1_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Giải tam giác thực tế"
+      },
+      {
+        "id": "m10_ck1_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Tích của một số với một vectơ, tích vô hướng"
+      },
+      {
+        "id": "m10_ck1_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 5. Các số đặc trưng đo xu thế trung tâm (số trung bình, trung vị, tứ phân vị, mốt)"
+      },
+      {
+        "id": "m10_ck1_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1 & 2. Mệnh đề, tập hợp và miền nghiệm hệ BPT"
+      },
+      {
+        "id": "m10_ck1_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Hệ thức lượng trong tam giác và bán kính đường tròn"
+      },
+      {
+        "id": "m10_ck1_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Phân tích vectơ, tính góc giữa hai vectơ và tích vô hướng"
+      },
+      {
+        "id": "m10_ck1_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 5. Khoảng biến thiên, khoảng tứ phân vị và độ lệch chuẩn"
+      },
+      {
+        "id": "m10_ck1_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Xác định tập hợp và phép toán giao hợp (Bài 1)"
+      },
+      {
+        "id": "m10_ck1_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Chứng minh hệ thức vectơ hoặc tính tích vô hướng (Bài 2)"
+      },
+      {
+        "id": "m10_ck1_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 3. Bài toán thực tế giải tam giác kết hợp vectơ nâng cao (Bài 3)"
+      }
+    ]
+  },
+  "matrix_10_gk2": {
+    "grade": 10,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 2 - TOÁN 10",
+    "slots": [
+      {
+        "id": "m10_gk2_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Khái niệm hàm số và tập xác định"
+      },
+      {
+        "id": "m10_gk2_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Hàm số bậc hai, tọa độ đỉnh parabol"
+      },
+      {
+        "id": "m10_gk2_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Trục đối xứng của parabol"
+      },
+      {
+        "id": "m10_gk2_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Dấu của tam thức bậc hai"
+      },
+      {
+        "id": "m10_gk2_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Bất phương trình bậc hai một ẩn"
+      },
+      {
+        "id": "m10_gk2_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Phương trình quy về phương trình bậc hai"
+      },
+      {
+        "id": "m10_gk2_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Tọa độ của vectơ trong mặt phẳng Oxy"
+      },
+      {
+        "id": "m10_gk2_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Tọa độ của điểm và các phép toán vectơ"
+      },
+      {
+        "id": "m10_gk2_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Vẽ đồ thị hàm số bậc hai và khảo sát tính biến thiên"
+      },
+      {
+        "id": "m10_gk2_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Giải bất phương trình bậc hai một ẩn"
+      },
+      {
+        "id": "m10_gk2_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Phương trình chứa căn dạng căn A = B hoặc căn A = căn B"
+      },
+      {
+        "id": "m10_gk2_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Phương trình tổng quát và tham số của đường thẳng"
+      },
+      {
+        "id": "m10_gk2_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Khảo sát hàm số bậc hai và tương giao đồ thị"
+      },
+      {
+        "id": "m10_gk2_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Bất phương trình bậc hai chứa tham số m"
+      },
+      {
+        "id": "m10_gk2_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Vị trí tương đối của hai đường thẳng, góc và khoảng cách"
+      },
+      {
+        "id": "m10_gk2_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Bài toán thực tiễn tối ưu hóa liên quan đến parabol"
+      },
+      {
+        "id": "m10_gk2_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Tìm tập xác định của hàm số chứa căn và mẫu (Bài 1)"
+      },
+      {
+        "id": "m10_gk2_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Viết phương trình đường thẳng và tính khoảng cách (Bài 2)"
+      },
+      {
+        "id": "m10_gk2_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Giải phương trình chứa căn thức hoặc bất phương trình tham số nâng cao (Bài 3)"
+      }
+    ]
+  },
+  "matrix_10_ck2": {
+    "grade": 10,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 2 - TOÁN 10",
+    "slots": [
+      {
+        "id": "m10_ck2_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Hàm số bậc hai và tam thức bậc hai"
+      },
+      {
+        "id": "m10_ck2_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Phương trình đường thẳng trong Oxy"
+      },
+      {
+        "id": "m10_ck2_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Phương trình đường tròn và tâm, bán kính"
+      },
+      {
+        "id": "m10_ck2_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Ba đường conic (elip, hypebol, parabol)"
+      },
+      {
+        "id": "m10_ck2_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Quy tắc cộng và quy tắc nhân"
+      },
+      {
+        "id": "m10_ck2_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Hoán vị, chỉnh hợp, tổ hợp"
+      },
+      {
+        "id": "m10_ck2_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 9. Phép thử ngẫu nhiên và không gian mẫu"
+      },
+      {
+        "id": "m10_ck2_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 9. Biến cố và xác suất của biến cố"
+      },
+      {
+        "id": "m10_ck2_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Giải phương trình quy về bậc hai"
+      },
+      {
+        "id": "m10_ck2_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Viết phương trình tiếp tuyến của đường tròn"
+      },
+      {
+        "id": "m10_ck2_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Khai triển nhị thức Newton với số mũ nhỏ"
+      },
+      {
+        "id": "m10_ck2_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 9. Tính xác suất bằng sơ đồ cây hoặc tổ hợp"
+      },
+      {
+        "id": "m10_ck2_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Tam thức bậc hai và bài toán thực tế"
+      },
+      {
+        "id": "m10_ck2_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Phương trình đường tròn và vị trí tương đối"
+      },
+      {
+        "id": "m10_ck2_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Bài toán đếm tổ hợp và nhị thức Newton"
+      },
+      {
+        "id": "m10_ck2_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 9. Bài toán xác suất cổ điển nâng cao"
+      },
+      {
+        "id": "m10_ck2_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Giải bất phương trình bậc hai một ẩn (Bài 1)"
+      },
+      {
+        "id": "m10_ck2_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Bài toán đếm hoặc tính hệ số trong nhị thức Newton (Bài 2)"
+      },
+      {
+        "id": "m10_ck2_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Viết phương trình đường tròn hoặc đường conic trong bài toán thực tế (Bài 3)"
+      }
+    ]
+  },
+  "matrix_11_gk1": {
+    "grade": 11,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 1 - TOÁN 11",
+    "slots": [
+      {
+        "id": "m11_gk1_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Góc lượng giác và đơn vị radian"
+      },
+      {
+        "id": "m11_gk1_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Giá trị lượng giác của góc lượng giác"
+      },
+      {
+        "id": "m11_gk1_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Các công thức lượng giác cơ bản"
+      },
+      {
+        "id": "m11_gk1_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tập xác định và tập giá trị của hàm số lượng giác"
+      },
+      {
+        "id": "m11_gk1_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Khái niệm dãy số, số hạng tổng quát"
+      },
+      {
+        "id": "m11_gk1_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Dãy số tăng, dãy số giảm"
+      },
+      {
+        "id": "m11_gk1_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Định nghĩa cấp số cộng và công sai"
+      },
+      {
+        "id": "m11_gk1_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Định nghĩa cấp số nhân và công bội"
+      },
+      {
+        "id": "m11_gk1_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Công thức cộng, công thức nhân đôi"
+      },
+      {
+        "id": "m11_gk1_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Phương trình lượng giác cơ bản sin x = m, cos x = m"
+      },
+      {
+        "id": "m11_gk1_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Số hạng tổng quát và tổng n số hạng đầu của cấp số cộng"
+      },
+      {
+        "id": "m11_gk1_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Số hạng tổng quát và tổng n số hạng đầu của cấp số nhân"
+      },
+      {
+        "id": "m11_gk1_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Rút gọn biểu thức lượng giác và giải phương trình"
+      },
+      {
+        "id": "m11_gk1_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Khảo sát tính tuần hoàn và đồ thị hàm số lượng giác"
+      },
+      {
+        "id": "m11_gk1_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Dãy số và bài toán cấp số cộng"
+      },
+      {
+        "id": "m11_gk1_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Cấp số nhân và bài toán thực tế tăng trưởng/lãi suất"
+      },
+      {
+        "id": "m11_gk1_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Giải phương trình lượng giác cơ bản (Bài 1)"
+      },
+      {
+        "id": "m11_gk1_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Bài toán thực tiễn về cấp số cộng hoặc cấp số nhân (Bài 2)"
+      },
+      {
+        "id": "m11_gk1_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Phương trình lượng giác có nghiệm thuộc khoảng hoặc điều kiện tham số (Bài 3)"
+      }
+    ]
+  },
+  "matrix_11_ck1": {
+    "grade": 11,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 1 - TOÁN 11",
+    "slots": [
+      {
+        "id": "m11_ck1_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Hàm số lượng giác và phương trình lượng giác"
+      },
+      {
+        "id": "m11_ck1_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Chu kì và đồ thị hàm số lượng giác"
+      },
+      {
+        "id": "m11_ck1_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Cấp số cộng và cấp số nhân"
+      },
+      {
+        "id": "m11_ck1_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Dãy số bị chặn"
+      },
+      {
+        "id": "m11_ck1_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 3. Mẫu số liệu ghép nhóm và bảng tần số"
+      },
+      {
+        "id": "m11_ck1_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 3. Khoảng biến thiên và khoảng tứ phân vị mẫu ghép nhóm"
+      },
+      {
+        "id": "m11_ck1_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Điểm, đường thẳng và mặt phẳng trong không gian"
+      },
+      {
+        "id": "m11_ck1_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Hai đường thẳng song song trong không gian"
+      },
+      {
+        "id": "m11_ck1_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Phương trình lượng giác quy về bậc nhất hoặc bậc hai"
+      },
+      {
+        "id": "m11_ck1_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Bài toán thực tế về cấp số"
+      },
+      {
+        "id": "m11_ck1_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Đường thẳng song song với mặt phẳng"
+      },
+      {
+        "id": "m11_ck1_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Hai mặt phẳng song song và hình hộp"
+      },
+      {
+        "id": "m11_ck1_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Phương trình lượng giác và nghiệm thuộc khoảng"
+      },
+      {
+        "id": "m11_ck1_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Dãy số, cấp số cộng và cấp số nhân"
+      },
+      {
+        "id": "m11_ck1_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 3. Số đặc trưng đo độ phân tán của mẫu ghép nhóm"
+      },
+      {
+        "id": "m11_ck1_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Thiết diện và quan hệ song song trong không gian"
+      },
+      {
+        "id": "m11_ck1_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Giải phương trình lượng giác (Bài 1)"
+      },
+      {
+        "id": "m11_ck1_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Tìm giao tuyến và xác định thiết diện song song (Bài 2)"
+      },
+      {
+        "id": "m11_ck1_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 2. Bài toán cấp số cộng, cấp số nhân nâng cao hoặc giới hạn dãy số (Bài 3)"
+      }
+    ]
+  },
+  "matrix_11_gk2": {
+    "grade": 11,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 2 - TOÁN 11",
+    "slots": [
+      {
+        "id": "m11_gk2_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Giới hạn của dãy số"
+      },
+      {
+        "id": "m11_gk2_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Giới hạn hữu hạn của hàm số tại một điểm"
+      },
+      {
+        "id": "m11_gk2_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Giới hạn tại vô cực"
+      },
+      {
+        "id": "m11_gk2_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Khái niệm hàm số liên tục"
+      },
+      {
+        "id": "m11_gk2_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Phép tính lũy thừa với số mũ thực"
+      },
+      {
+        "id": "m11_gk2_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Khái niệm và tính chất của lôgarit"
+      },
+      {
+        "id": "m11_gk2_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Hàm số mũ y = a^x"
+      },
+      {
+        "id": "m11_gk2_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Hàm số lôgarit y = log_a(x)"
+      },
+      {
+        "id": "m11_gk2_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Tính giới hạn dạng 0/0 hoặc vô cùng trừ vô cùng"
+      },
+      {
+        "id": "m11_gk2_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Xét tính liên tục của hàm số tại một điểm"
+      },
+      {
+        "id": "m11_gk2_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Phương trình mũ cơ bản"
+      },
+      {
+        "id": "m11_gk2_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Phương trình lôgarit cơ bản"
+      },
+      {
+        "id": "m11_gk2_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Giới hạn hàm số và ứng dụng định lí giá trị trung gian"
+      },
+      {
+        "id": "m11_gk2_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Tính liên tục của hàm số trên một khoảng"
+      },
+      {
+        "id": "m11_gk2_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Biến đổi biểu thức lũy thừa và lôgarit"
+      },
+      {
+        "id": "m11_gk2_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Bất phương trình mũ và lôgarit, bài toán lãi kép thực tiễn"
+      },
+      {
+        "id": "m11_gk2_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Tính giới hạn hàm số dạng 0/0 khử dạng vô định (Bài 1)"
+      },
+      {
+        "id": "m11_gk2_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Giải phương trình mũ hoặc lôgarit đặt ẩn phụ (Bài 2)"
+      },
+      {
+        "id": "m11_gk2_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Bài toán thực tế về mô hình tăng trưởng dân số / phân rã phóng xạ (Bài 3)"
+      }
+    ]
+  },
+  "matrix_11_ck2": {
+    "grade": 11,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 2 - TOÁN 11",
+    "slots": [
+      {
+        "id": "m11_ck2_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 5. Giới hạn và hàm số liên tục"
+      },
+      {
+        "id": "m11_ck2_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Hàm số mũ và hàm số lôgarit"
+      },
+      {
+        "id": "m11_ck2_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Hai đường thẳng vuông góc trong không gian"
+      },
+      {
+        "id": "m11_ck2_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Đường thẳng vuông góc với mặt phẳng"
+      },
+      {
+        "id": "m11_ck2_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Hai mặt phẳng vuông góc"
+      },
+      {
+        "id": "m11_ck2_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Biến cố giao và biến cố hợp"
+      },
+      {
+        "id": "m11_ck2_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 9. Định nghĩa đạo hàm tại một điểm"
+      },
+      {
+        "id": "m11_ck2_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 9. Đạo hàm của hàm số lượng giác, mũ, lôgarit"
+      },
+      {
+        "id": "m11_ck2_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Phương trình và bất phương trình mũ, lôgarit"
+      },
+      {
+        "id": "m11_ck2_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Khoảng cách từ điểm đến mặt phẳng, khoảng cách giữa hai đường chéo nhau"
+      },
+      {
+        "id": "m11_ck2_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Công thức cộng và công thức nhân xác suất"
+      },
+      {
+        "id": "m11_ck2_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 9. Quy tắc tính đạo hàm và phương trình tiếp tuyến của đồ thị"
+      },
+      {
+        "id": "m11_ck2_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 6. Phương trình, bất phương trình mũ và lôgarit"
+      },
+      {
+        "id": "m11_ck2_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Quan hệ vuông góc và góc giữa đường thẳng và mặt phẳng"
+      },
+      {
+        "id": "m11_ck2_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Biến cố độc lập và quy tắc nhân xác suất"
+      },
+      {
+        "id": "m11_ck2_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 9. Đạo hàm cấp hai, ý nghĩa hình học và vật lí"
+      },
+      {
+        "id": "m11_ck2_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 9. Viết phương trình tiếp tuyến của đồ thị hàm số tại điểm (Bài 1)"
+      },
+      {
+        "id": "m11_ck2_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 7. Tính khoảng cách từ điểm đến mặt phẳng trong hình chóp (Bài 2)"
+      },
+      {
+        "id": "m11_ck2_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "ESSAY",
+        "level": "VAN_DUNG_CAO",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 8. Bài toán tính xác suất biến cố thực tế nâng cao (Bài 3)"
+      }
+    ]
+  },
+  "matrix_12_gk1": {
+    "grade": 12,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 1 - TOÁN 12",
+    "slots": [
+      {
+        "id": "m12_gk1_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tính đơn điệu của hàm số"
+      },
+      {
+        "id": "m12_gk1_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Cực trị của hàm số"
+      },
+      {
+        "id": "m12_gk1_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Giá trị lớn nhất, giá trị nhỏ nhất trên đoạn"
+      },
+      {
+        "id": "m12_gk1_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Đường tiệm cận đứng, tiệm cận ngang"
+      },
+      {
+        "id": "m12_gk1_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Đường tiệm cận xiên của đồ thị hàm số"
+      },
+      {
+        "id": "m12_gk1_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Nhận dạng bảng biến thiên hàm số"
+      },
+      {
+        "id": "m12_gk1_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Nhận dạng đồ thị hàm phân thức hữu tỉ"
+      },
+      {
+        "id": "m12_gk1_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tính đơn điệu của hàm số chứa tham số"
+      },
+      {
+        "id": "m12_gk1_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Khoảng đơn điệu của hàm số hợp"
+      },
+      {
+        "id": "m12_gk1_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Cực trị hàm đa thức bậc ba"
+      },
+      {
+        "id": "m12_gk1_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Giá trị lớn nhất, nhỏ nhất trên một khoảng"
+      },
+      {
+        "id": "m12_gk1_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tìm tiệm cận của đồ thị hàm số"
+      },
+      {
+        "id": "m12_gk1_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tính đơn điệu toàn diện của hàm số"
+      },
+      {
+        "id": "m12_gk1_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Khảo sát cực trị và tính lồi lõm của đồ thị"
+      },
+      {
+        "id": "m12_gk1_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Đường tiệm cận và tâm đối xứng của đồ thị"
+      },
+      {
+        "id": "m12_gk1_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Khảo sát toàn diện sự biến thiên và đồ thị"
+      },
+      {
+        "id": "m12_gk1_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "THONG_HIEU",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Điểm cực trị của hàm số"
+      },
+      {
+        "id": "m12_gk1_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Giá trị lớn nhất của hàm số trên đoạn"
+      },
+      {
+        "id": "m12_gk1_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Bài toán tối ưu hóa thực tiễn (chi phí, diện tích)"
+      },
+      {
+        "id": "m12_gk1_p3_20",
+        "num": 20,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Đường tiệm cận xiên chứa tham số"
+      },
+      {
+        "id": "m12_gk1_p3_21",
+        "num": 21,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Cực trị hàm số có tham số m"
+      },
+      {
+        "id": "m12_gk1_p3_22",
+        "num": 22,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Bài toán thực tiễn tối ưu hóa thể tích hình học"
+      }
+    ]
+  },
+  "matrix_12_ck1": {
+    "grade": 12,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 1 - TOÁN 12",
+    "slots": [
+      {
+        "id": "m12_ck1_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Đơn điệu và cực trị hàm số"
+      },
+      {
+        "id": "m12_ck1_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Giá trị lớn nhất, nhỏ nhất trên đoạn"
+      },
+      {
+        "id": "m12_ck1_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tiệm cận của đồ thị hàm số"
+      },
+      {
+        "id": "m12_ck1_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Nhận dạng đồ thị hàm số"
+      },
+      {
+        "id": "m12_ck1_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 2. Vectơ trong không gian và các phép toán"
+      },
+      {
+        "id": "m12_ck1_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 2. Tọa độ của điểm trong hệ Oxyz"
+      },
+      {
+        "id": "m12_ck1_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 2. Tọa độ của vectơ trong hệ Oxyz"
+      },
+      {
+        "id": "m12_ck1_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 3. Mẫu số liệu ghép nhóm và khoảng biến thiên"
+      },
+      {
+        "id": "m12_ck1_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tương giao đồ thị hàm số"
+      },
+      {
+        "id": "m12_ck1_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 2. Tích vô hướng của hai vectơ trong Oxyz"
+      },
+      {
+        "id": "m12_ck1_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 2. Góc giữa hai vectơ trong không gian Oxyz"
+      },
+      {
+        "id": "m12_ck1_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 3. Phương sai và độ lệch chuẩn của mẫu ghép nhóm"
+      },
+      {
+        "id": "m12_ck1_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Khảo sát toàn diện hàm số bậc ba hoặc hàm phân thức"
+      },
+      {
+        "id": "m12_ck1_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tiệm cận và tâm đối xứng của đồ thị"
+      },
+      {
+        "id": "m12_ck1_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 2. Tọa độ điểm, trung điểm và trọng tâm trong Oxyz"
+      },
+      {
+        "id": "m12_ck1_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 3. So sánh độ phân tán của hai mẫu số liệu ghép nhóm"
+      },
+      {
+        "id": "m12_ck1_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "THONG_HIEU",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 2. Độ dài vectơ trong hệ Oxyz"
+      },
+      {
+        "id": "m12_ck1_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Giá trị lớn nhất trong bài toán thực tế"
+      },
+      {
+        "id": "m12_ck1_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Tối ưu hóa chi phí sản xuất"
+      },
+      {
+        "id": "m12_ck1_p3_20",
+        "num": 20,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 2. Tọa độ điểm thỏa mãn hệ thức vectơ"
+      },
+      {
+        "id": "m12_ck1_p3_21",
+        "num": 21,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 1. Hàm số chứa tham số m đơn điệu trên khoảng"
+      },
+      {
+        "id": "m12_ck1_p3_22",
+        "num": 22,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 2. Gắn hệ trục Oxyz vào mô hình công trình thực tế"
+      }
+    ]
+  },
+  "matrix_12_gk2": {
+    "grade": 12,
+    "title": "ĐỀ KIỂM TRA GIỮA HỌC KỲ 2 - TOÁN 12",
+    "slots": [
+      {
+        "id": "m12_gk2_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Định nghĩa nguyên hàm và tính chất"
+      },
+      {
+        "id": "m12_gk2_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Bảng nguyên hàm của các hàm số cơ bản"
+      },
+      {
+        "id": "m12_gk2_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Nguyên hàm của hàm số mũ và lượng giác"
+      },
+      {
+        "id": "m12_gk2_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Định nghĩa tích phân và ý nghĩa hình học"
+      },
+      {
+        "id": "m12_gk2_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Tính chất của tích phân"
+      },
+      {
+        "id": "m12_gk2_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Tích phân của các hàm số cơ bản"
+      },
+      {
+        "id": "m12_gk2_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Diện tích hình phẳng giới hạn bởi đồ thị hàm số"
+      },
+      {
+        "id": "m12_gk2_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Thể tích vật thể và thể tích khối tròn xoay"
+      },
+      {
+        "id": "m12_gk2_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Phương pháp đổi biến số tính nguyên hàm"
+      },
+      {
+        "id": "m12_gk2_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Phương pháp nguyên hàm từng phần"
+      },
+      {
+        "id": "m12_gk2_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Phương pháp tính tích phân"
+      },
+      {
+        "id": "m12_gk2_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Ứng dụng tích phân tính diện tích hình phẳng"
+      },
+      {
+        "id": "m12_gk2_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Nguyên hàm và điều kiện ban đầu f(x0) = y0"
+      },
+      {
+        "id": "m12_gk2_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Tích phân đổi biến số"
+      },
+      {
+        "id": "m12_gk2_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Tích phân từng phần hàm đa thức nhân mũ/lượng giác"
+      },
+      {
+        "id": "m12_gk2_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Ứng dụng tích phân tính thể tích vật thể tròn xoay"
+      },
+      {
+        "id": "m12_gk2_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "THONG_HIEU",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Tích phân cơ bản"
+      },
+      {
+        "id": "m12_gk2_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Ứng dụng tích phân tính quãng đường chuyển động"
+      },
+      {
+        "id": "m12_gk2_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Tính tích phân bằng phương pháp đổi biến"
+      },
+      {
+        "id": "m12_gk2_p3_20",
+        "num": 20,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Diện tích hình phẳng giới hạn bởi hai đường cong"
+      },
+      {
+        "id": "m12_gk2_p3_21",
+        "num": 21,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Bài toán thực tế tích phân lưu lượng nước / chi phí"
+      },
+      {
+        "id": "m12_gk2_p3_22",
+        "num": 22,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Thể tích thùng rượu, phao bơi tròn xoay thực tế"
+      }
+    ]
+  },
+  "matrix_12_ck2": {
+    "grade": 12,
+    "title": "ĐỀ KIỂM TRA CUỐI HỌC KỲ 2 - TOÁN 12 (ÔN TỐT NGHIỆP)",
+    "slots": [
+      {
+        "id": "m12_ck2_p1_1",
+        "num": 1,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Nguyên hàm cơ bản"
+      },
+      {
+        "id": "m12_ck2_p1_2",
+        "num": 2,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Tính chất tích phân"
+      },
+      {
+        "id": "m12_ck2_p1_3",
+        "num": 3,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 4. Ứng dụng hình học của tích phân"
+      },
+      {
+        "id": "m12_ck2_p1_4",
+        "num": 4,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Phương trình mặt phẳng trong không gian Oxyz"
+      },
+      {
+        "id": "m12_ck2_p1_5",
+        "num": 5,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Phương trình đường thẳng trong không gian Oxyz"
+      },
+      {
+        "id": "m12_ck2_p1_6",
+        "num": 6,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Phương trình mặt cầu trong không gian Oxyz"
+      },
+      {
+        "id": "m12_ck2_p1_7",
+        "num": 7,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 6. Khái niệm xác suất có điều kiện"
+      },
+      {
+        "id": "m12_ck2_p1_8",
+        "num": 8,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "NHAN_BIET",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 6. Công thức nhân xác suất"
+      },
+      {
+        "id": "m12_ck2_p1_9",
+        "num": 9,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Tích phân đổi biến số"
+      },
+      {
+        "id": "m12_ck2_p1_10",
+        "num": 10,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Vị trí tương đối giữa mặt phẳng và đường thẳng"
+      },
+      {
+        "id": "m12_ck2_p1_11",
+        "num": 11,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Khoảng cách từ điểm đến mặt phẳng, đường thẳng"
+      },
+      {
+        "id": "m12_ck2_p1_12",
+        "num": 12,
+        "part": 1,
+        "type": "MULTIPLE_CHOICE",
+        "level": "THONG_HIEU",
+        "pts": 0.25,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 6. Công thức xác suất toàn phần và công thức Bayes"
+      },
+      {
+        "id": "m12_ck2_p2_13",
+        "num": 13,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "NHAN_BIET",
+        "pts": 1.0,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Nguyên hàm và tích phân toàn diện"
+      },
+      {
+        "id": "m12_ck2_p2_14",
+        "num": 14,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Phương trình đường thẳng và mặt phẳng Oxyz"
+      },
+      {
+        "id": "m12_ck2_p2_15",
+        "num": 15,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "THONG_HIEU",
+        "pts": 1.0,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Mặt cầu và khoảng cách trong Oxyz"
+      },
+      {
+        "id": "m12_ck2_p2_16",
+        "num": 16,
+        "part": 2,
+        "type": "TRUE_FALSE",
+        "level": "VAN_DUNG",
+        "pts": 1.0,
+        "topic": "Thống kê và Xác suất",
+        "subtopic": "Chương 6. Bài toán xác suất có điều kiện trong xét nghiệm y tế"
+      },
+      {
+        "id": "m12_ck2_p3_17",
+        "num": 17,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "THONG_HIEU",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Bán kính mặt cầu hoặc khoảng cách"
+      },
+      {
+        "id": "m12_ck2_p3_18",
+        "num": 18,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Ứng dụng tích phân tính diện tích hình phẳng"
+      },
+      {
+        "id": "m12_ck2_p3_19",
+        "num": 19,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Viết phương trình mặt phẳng đi qua 3 điểm hoặc tiếp xúc mặt cầu"
+      },
+      {
+        "id": "m12_ck2_p3_20",
+        "num": 20,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Góc và khoảng cách trong hình giải tích Oxyz"
+      },
+      {
+        "id": "m12_ck2_p3_21",
+        "num": 21,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Đại số và Giải tích",
+        "subtopic": "Chương 4. Tích phân hàm ẩn hoặc thể tích vật thể thực tế"
+      },
+      {
+        "id": "m12_ck2_p3_22",
+        "num": 22,
+        "part": 3,
+        "type": "SHORT_ANSWER",
+        "level": "VAN_DUNG_CAO",
+        "pts": 0.5,
+        "topic": "Hình học và Đo lường",
+        "subtopic": "Chương 5. Cực trị hình học không gian Oxyz"
+      }
+    ]
+  }
+}

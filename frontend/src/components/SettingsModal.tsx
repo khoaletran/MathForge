@@ -47,15 +47,16 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       aria-modal="true"
       aria-labelledby="settings-dialog-title"
     >
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden animate-in fade-in duration-200">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden animate-in fade-in duration-200 overscroll-contain">
         <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div className="flex items-center gap-2">
             <Key className="w-5 h-5 text-indigo-600" />
             <h3 id="settings-dialog-title" className="font-bold text-slate-900 text-lg">Cấu hình API & Hệ thống</h3>
           </div>
           <button 
+            type="button"
             onClick={onClose} 
-            className="p-1 rounded-lg text-slate-400 hover:text-slate-600 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none"
+            className="p-1 rounded-lg text-slate-400 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
             aria-label="Đóng bảng cấu hình"
           >
             <X className="w-5 h-5" />
@@ -74,7 +75,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               value={inputKey}
               onChange={(e) => setInputKey(e.target.value)}
               placeholder="AIzaSy…"
-              className="w-full text-sm font-mono p-3 border border-slate-300 rounded-lg focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none"
+              className="w-full text-sm font-mono p-3 border border-slate-300 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
             />
             <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
               * Khóa API được lưu cục bộ trên trình duyệt của bạn (localStorage).
@@ -99,13 +100,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-slate-600">Trình biên dịch PDF (Docker / TeX Live):</span>
-              <span className={systemHealth?.docker_available || systemHealth?.local_latex_compiler ? "font-semibold text-emerald-600" : "font-semibold text-amber-600"}>
-                {systemHealth?.local_latex_compiler || (systemHealth?.docker_available ? "Docker Ready" : "Chờ kích hoạt")}
-              </span>
-            </div>
-
-            <div className="flex items-center justify-between">
               <span className="text-slate-600">Chuẩn tài liệu:</span>
               <span className="font-semibold text-indigo-600">ex_test.sty & GDPT 2018</span>
             </div>
@@ -114,14 +108,16 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
         <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-end gap-3">
           <button
+            type="button"
             onClick={onClose}
-            className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-800 rounded-lg focus-visible:ring-2 focus-visible:ring-indigo-500"
+            className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-800 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
           >
             Hủy
           </button>
           <button
+            type="button"
             onClick={handleSave}
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow-sm transition focus-visible:ring-2 focus-visible:ring-indigo-500"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow-sm transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
           >
             {saved ? <Check className="w-4 h-4" /> : <Shield className="w-4 h-4" />}
             <span>{saved ? 'Đã lưu thành công!' : 'Lưu cấu hình'}</span>

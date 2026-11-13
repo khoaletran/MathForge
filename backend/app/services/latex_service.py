@@ -13,8 +13,15 @@ class LaTeXService:
         """Chuẩn hóa ký tự công thức toán học nếu cần."""
         if not text:
             return ""
-        # Đảm bảo không bị dính ký tự lạ
-        return text.strip()
+        def format_infinity(part: str) -> str:
+            return re.sub(
+                r"(?:\\+infty(?![a-zA-Z])|∞)",
+                lambda _: r"\infty" if part.startswith("$") else r"\ensuremath{\infty}",
+                part,
+            )
+
+        parts = re.split(r"(\$\$[\s\S]*?\$\$|\$[^$]+\$)", text.strip())
+        return "".join(format_infinity(part) for part in parts)
 
     @classmethod
     def question_to_latex(cls, q: Question, include_solution: bool = True) -> str:
@@ -198,48 +205,60 @@ class LaTeXService:
 """
 
         body_parts = []
+        part_idx = 1
+        roman_map = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"}
 
-        # PHẦN I
+        # Trắc nghiệm nhiều phương án lựa chọn
         if part1_questions:
-            body_parts.append(r"""
-\noindent\textbf{\large PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.}
-\textit{Thí sinh trả lời từ câu 1 đến câu """ + str(len(part1_questions)) + r""". Mỗi câu hỏi thí sinh chỉ chọn một phương án.}
-\vspace{0.5em}
+            roman = roman_map.get(part_idx, str(part_idx))
+            body_parts.append(rf"""
+\noindent\textbf{{\large PHẦN {roman}. Câu trắc nghiệm nhiều phương án lựa chọn.}}
+\textit{{Thí sinh trả lời từ câu 1 đến câu {len(part1_questions)}. Mỗi câu hỏi thí sinh chỉ chọn một phương án.}}
+\vspace{{0.5em}}
 """)
             for q in part1_questions:
                 body_parts.append(cls.question_to_latex(q, include_solution=include_solution))
+            part_idx += 1
 
-        # PHẦN II
+        # Trắc nghiệm đúng sai
         if part2_questions:
-            body_parts.append(r"""
-\vspace{1em}
-\noindent\textbf{\large PHẦN II. Câu trắc nghiệm đúng sai.}
-\textit{Thí sinh trả lời từ câu 1 đến câu """ + str(len(part2_questions)) + r""". Trong mỗi ý a), b), c), d) ở mỗi câu, thí sinh chọn đúng hoặc sai.}
-\vspace{0.5em}
+            roman = roman_map.get(part_idx, str(part_idx))
+            body_parts.append(rf"""
+\vspace{{1em}}
+\noindent\textbf{{\large PHẦN {roman}. Câu trắc nghiệm đúng sai.}}
+\textit{{Thí sinh trả lời từ câu 1 đến câu {len(part2_questions)}. Trong mỗi ý a), b), c), d) ở mỗi câu, thí sinh chọn đúng hoặc sai.}}
+\vspace{{0.5em}}
 """)
             for q in part2_questions:
                 body_parts.append(cls.question_to_latex(q, include_solution=include_solution))
+            part_idx += 1
 
-        # PHẦN III
+        # Trắc nghiệm trả lời ngắn
         if part3_questions:
-            body_parts.append(r"""
-\vspace{1em}
-\noindent\textbf{\large PHẦN III. Câu trắc nghiệm trả lời ngắn.}
-\textit{Thí sinh trả lời từ câu 1 đến câu """ + str(len(part3_questions)) + r""".}
-\vspace{0.5em}
+            roman = roman_map.get(part_idx, str(part_idx))
+            body_parts.append(rf"""
+\vspace{{1em}}
+\noindent\textbf{{\large PHẦN {roman}. Câu trắc nghiệm trả lời ngắn.}}
+\textit{{Thí sinh trả lời từ câu 1 đến câu {len(part3_questions)}.}}
+\vspace{{0.5em}}
 """)
             for q in part3_questions:
                 body_parts.append(cls.question_to_latex(q, include_solution=include_solution))
+            part_idx += 1
 
-        # PHẦN IV
+        # Tự luận
         if part4_questions:
-            body_parts.append(r"""
-\vspace{1em}
-\noindent\textbf{\large PHẦN IV. Tự luận.}
-\vspace{0.5em}
+            roman = roman_map.get(part_idx, str(part_idx))
+            title_str = f"PHẦN {roman}. Tự luận." if (part1_questions or part2_questions or part3_questions) else "PHẦN TỰ LUẬN."
+            body_parts.append(rf"""
+\vspace{{1em}}
+\noindent\textbf{{\large {title_str}}}
+\textit{{Thí sinh trình bày chi tiết các bước giải và lập luận trên giấy làm bài.}}
+\vspace{{0.5em}}
 """)
             for q in part4_questions:
                 body_parts.append(cls.question_to_latex(q, include_solution=include_solution))
+            part_idx += 1
 
         # BẢNG ĐÁP ÁN TỔNG HỢP (NẾU CÓ)
         answer_key = cls._generate_answer_key_table(paper)

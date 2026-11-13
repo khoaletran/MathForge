@@ -1,15 +1,19 @@
-import React, { useState, useMemo, startTransition, ViewTransition } from 'react';
+import React, { useState, useMemo, useLayoutEffect, useEffect, useRef, startTransition, ViewTransition } from 'react';
 import { 
   Sparkles, FileText, CheckCircle2, RefreshCw, Printer, 
   Copy, Check, Code, Eye, FileDown, Layers, ChevronRight, 
   AlertCircle, ShieldCheck, Download, ExternalLink, SlidersHorizontal,
-  Columns, Maximize2, Minimize2, Wand2
+  Columns, Maximize2, Minimize2, Wand2, Loader2, CircleDashed, Cpu, FileCode2, Sigma
 } from 'lucide-react';
-import { QuestionCard, Question } from './QuestionCard';
+import { QuestionCard, Question, LEVEL_BADGES } from './QuestionCard';
 import { MathView } from './MathView';
+import { TikZView } from './TikZView';
 import { ExamMatrix } from './MatrixManager';
 
 interface ExamStudioProps {
+  onLayoutChange: (layout: { choice_layout: 'auto' | '4col' | '2col' | '1col'; density: 'compact' | 'normal' | 'spacious'; font_size: 'sm' | 'base' | 'lg'; column_mode: 1 | 2 }) => void;
+  includeSolution: boolean;
+  referenceSources: { title: string; url: string }[];
   matrix: ExamMatrix;
   questions: Question[];
   examMeta: {
@@ -20,34 +24,31 @@ interface ExamStudioProps {
   };
   onGenerateAll: () => Promise<void>;
   isGeneratingAll: boolean;
-  progress: { current: number; total: number };
   onRegenerateSlot: (slotId: string, customPrompt?: string) => Promise<void>;
   onCloneNumbers: (slotId: string) => Promise<void>;
   onUpdateQuestion: (updatedQ: Question) => void;
   onOpenExport: () => void;
   latexCode: string;
-  onCompilePdf: () => Promise<void>;
-  isCompiling: boolean;
 }
 
 export const ExamStudio: React.FC<ExamStudioProps> = ({
+  onLayoutChange,
+  includeSolution,
   matrix,
   questions,
+  referenceSources,
   examMeta,
   onGenerateAll,
   isGeneratingAll,
-  progress,
   onRegenerateSlot,
   onCloneNumbers,
   onUpdateQuestion,
   onOpenExport,
   latexCode,
-  onCompilePdf,
-  isCompiling
 }) => {
   const [activeQuestionIndex, setActiveQuestionIndex] = useState<number>(0);
-  const [activePartFilter, setActivePartFilter] = useState<'all' | 1 | 2 | 3>('all');
-  const [rightTab, setRightTab] = useState<'preview' | 'latex' | 'pdf'>('preview');
+  const [activePartFilter, setActivePartFilter] = useState<'all' | 'mc' | 'tf' | 'sa' | 'essay'>('all');
+  const [rightTab, setRightTab] = useState<'preview' | 'latex'>('preview');
   const [copiedTex, setCopiedTex] = useState<boolean>(false);
 
   // Cấu hình định dạng trang in A4 và tự động căn chỉnh
@@ -55,15 +56,13 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
   const [choiceLayout, setChoiceLayout] = useState<'auto' | '4col' | '2col' | '1col'>('auto');
   const [density, setDensity] = useState<'compact' | 'normal' | 'spacious'>('normal');
   const [fontSize, setFontSize] = useState<'sm' | 'base' | 'lg'>('sm');
+  useEffect(() => {
+    onLayoutChange({ choice_layout: choiceLayout, density, font_size: fontSize, column_mode: columnMode });
+  }, [choiceLayout, density, fontSize, columnMode, onLayoutChange]);
   const [isPreviewExpanded, setIsPreviewExpanded] = useState<boolean>(false);
   const [autoFitNotice, setAutoFitNotice] = useState<string | null>(null);
 
-  const levelBadges = {
-    NHAN_BIET: { label: "NB", color: "bg-emerald-100 text-emerald-800" },
-    THONG_HIEU: { label: "TH", color: "bg-blue-100 text-blue-800" },
-    VAN_DUNG: { label: "VD", color: "bg-amber-100 text-amber-800" },
-    VAN_DUNG_CAO: { label: "VDC", color: "bg-rose-100 text-rose-800" }
-  };
+  const levelBadges = LEVEL_BADGES;
 
   const scrollToQuestion = (index: number) => {
     setActiveQuestionIndex(index);
@@ -81,9 +80,10 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
 
   const filteredQuestions = questions.filter(q => {
     if (activePartFilter === 'all') return true;
-    if (activePartFilter === 1) return q.type === "MULTIPLE_CHOICE";
-    if (activePartFilter === 2) return q.type === "TRUE_FALSE";
-    if (activePartFilter === 3) return q.type === "SHORT_ANSWER";
+    if (activePartFilter === 'mc') return q.type === "MULTIPLE_CHOICE";
+    if (activePartFilter === 'tf') return q.type === "TRUE_FALSE";
+    if (activePartFilter === 'sa') return q.type === "SHORT_ANSWER";
+    if (activePartFilter === 'essay') return q.type === "ESSAY";
     return true;
   });
 
@@ -111,27 +111,22 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
       setColumnMode(1);
       setDensity('normal');
       setFontSize('base');
-      setAutoFitNotice(`✨ Đã tự động bố trí ${total} câu vừa khít 1 trang A4!`);
-    } else if (total <= 24) {
-      // Đề chuẩn tốt nghiệp THPT 2025 (22 câu): xếp vừa khít 2 trang A4 (1 tờ 2 mặt)
-      setColumnMode(2);
-      setDensity('compact');
-      setFontSize('sm');
-      setAutoFitNotice(`✨ Đã tự động sắp xếp ${total} câu vừa khít 2 trang A4 (1 tờ 2 mặt) theo chuẩn Bộ GD&ĐT!`);
     } else {
-      // Đề thi học kỳ / thi thử lớn (30 - 50 câu): xếp vào 4 trang A4 (2 tờ in)
       setColumnMode(2);
       setDensity('compact');
       setFontSize('sm');
-      setAutoFitNotice(`✨ Đã tối ưu ${total} câu vừa vặn vào 4 trang A4 (2 tờ in) tiết kiệm giấy tối đa!`);
     }
 
+    setAutoFitNotice("Đã điều chỉnh bố cục A4.");
     setTimeout(() => setAutoFitNotice(null), 4500);
   };
 
   // Đính kèm metadata phân loại Phần cho từng câu hỏi
   const annotatedQuestions = useMemo(() => {
     let currentType: string | null = null;
+    let partCounter = 0;
+    const romanMap = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+
     return questions.map((q, idx) => {
       let isFirstOfPart = false;
       let partTitle = '';
@@ -140,18 +135,21 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
       if (q.type !== currentType) {
         currentType = q.type;
         isFirstOfPart = true;
+        const roman = romanMap[partCounter] || `${partCounter + 1}`;
+        partCounter++;
+
         if (q.type === 'MULTIPLE_CHOICE') {
-          partTitle = 'PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.';
+          partTitle = `PHẦN ${roman}. Câu trắc nghiệm nhiều phương án lựa chọn.`;
           partDesc = 'Thí sinh trả lời từng câu hỏi. Mỗi câu hỏi thí sinh chỉ chọn một phương án.';
         } else if (q.type === 'TRUE_FALSE') {
-          partTitle = 'PHẦN II. Câu trắc nghiệm đúng sai.';
+          partTitle = `PHẦN ${roman}. Câu trắc nghiệm đúng sai.`;
           partDesc = 'Trong mỗi ý a), b), c), d) ở mỗi câu, thí sinh chọn đúng hoặc sai.';
         } else if (q.type === 'SHORT_ANSWER') {
-          partTitle = 'PHẦN III. Câu trắc nghiệm trả lời ngắn.';
+          partTitle = `PHẦN ${roman}. Câu trắc nghiệm trả lời ngắn.`;
           partDesc = 'Thí sinh điền kết quả vào ô tương ứng.';
         } else if (q.type === 'ESSAY') {
-          partTitle = 'PHẦN IV. Tự luận.';
-          partDesc = 'Thí sinh trình bày chi tiết các bước giải.';
+          partTitle = `PHẦN ${roman}. Tự luận.`;
+          partDesc = 'Thí sinh trình bày chi tiết các bước giải và lập luận trên giấy làm bài.';
         }
       }
 
@@ -165,67 +163,83 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
     });
   }, [questions]);
 
-  // Thuật toán chia trang A4 tự động không bao giờ cắt đôi câu hỏi
+  const previewRef = useRef<HTMLDivElement>(null);
+  const [measurements, setMeasurements] = useState({
+    heights: [] as number[], firstCapacity: 0, nextCapacity: 0,
+  });
+  const pageHeight = isPreviewExpanded ? 1070 : 720;
+
   const paginatedPages = useMemo(() => {
-    if (annotatedQuestions.length === 0) return [];
+    const pages: { pageIndex: number; items: typeof annotatedQuestions }[] = [];
+    let items: typeof annotatedQuestions = [];
+    let height = 0;
+    let column = 1;
 
-    // Sức chứa của trang A4 theo điểm tương đối
-    const p1Capacity = columnMode === 2 ? 1400 : 700;
-    const pnCapacity = columnMode === 2 ? 1680 : 840;
-
-    const result: { pageIndex: number; items: typeof annotatedQuestions }[] = [];
-    let currentPageItems: typeof annotatedQuestions = [];
-    let currentHeight = 0;
-
-    for (let i = 0; i < annotatedQuestions.length; i++) {
-      const item = annotatedQuestions[i];
-
-      let weight = 0;
-      if (item.isFirstOfPart) weight += 45;
-
-      const stemChars = item.stem ? item.stem.length : 40;
-      const stemLines = Math.ceil(stemChars / (columnMode === 2 ? 38 : 75));
-      weight += stemLines * (density === 'compact' ? 17 : density === 'spacious' ? 24 : 20);
-
-      if (item.tikz_code) weight += 150;
-
-      if (item.type === 'MULTIPLE_CHOICE') {
-        const grid = getChoiceGridClass(item.choices, choiceLayout);
-        if (grid === 'grid-cols-4') {
-          weight += (density === 'compact' ? 22 : 28);
-        } else if (grid === 'grid-cols-2') {
-          weight += (density === 'compact' ? 42 : 54);
+    for (const question of annotatedQuestions) {
+      const questionHeight = measurements.heights[question.globalIndex - 1];
+      const capacity = pages.length === 0 ? measurements.firstCapacity : measurements.nextCapacity;
+      if (items.length && questionHeight && capacity && height + questionHeight > capacity) {
+        if (column === columnMode) {
+          pages.push({ pageIndex: pages.length + 1, items });
+          items = [];
+          column = 1;
         } else {
-          weight += (density === 'compact' ? 82 : 105);
+          column++;
         }
-      } else if (item.type === 'TRUE_FALSE') {
-        weight += (item.statements?.length || 4) * (density === 'compact' ? 18 : 22);
-      } else if (item.type === 'SHORT_ANSWER') {
-        weight += (density === 'compact' ? 22 : 28);
-      } else {
-        weight += 50;
+        height = 0;
       }
+      items.push(question);
+      height += questionHeight || 0;
+    }
+    if (items.length) pages.push({ pageIndex: pages.length + 1, items });
+    return pages;
+  }, [annotatedQuestions, columnMode, measurements]);
 
-      weight += (density === 'compact' ? 10 : density === 'spacious' ? 20 : 14);
+  useLayoutEffect(() => {
+    const preview = previewRef.current;
+    if (!preview) return;
 
-      const maxCap = result.length === 0 ? p1Capacity : pnCapacity;
-
-      if (currentPageItems.length > 0 && currentHeight + weight > maxCap) {
-        result.push({ pageIndex: result.length + 1, items: currentPageItems });
-        currentPageItems = [item];
-        currentHeight = weight;
-      } else {
-        currentPageItems.push(item);
-        currentHeight += weight;
+    const sheets = Array.from(preview.querySelectorAll<HTMLElement>('.a4-sheet'));
+    const questions = Array.from(preview.querySelectorAll<HTMLElement>('[data-print-question]'));
+    const measure = () => {
+      const heights: number[] = [];
+      for (const question of questions) {
+        const style = getComputedStyle(question);
+        heights[Number(question.dataset.printQuestion) - 1] = Math.ceil(
+          question.offsetHeight + parseFloat(style.marginTop) + parseFloat(style.marginBottom)
+        );
       }
-    }
-
-    if (currentPageItems.length > 0) {
-      result.push({ pageIndex: result.length + 1, items: currentPageItems });
-    }
-
-    return result;
-  }, [annotatedQuestions, columnMode, choiceLayout, density]);
+      const first = sheets[0];
+      if (!first) return;
+      const style = getComputedStyle(first);
+      const verticalInsets = ['paddingTop', 'paddingBottom', 'borderTopWidth', 'borderBottomWidth']
+        .reduce((sum, property) => sum + parseFloat(style[property as keyof CSSStyleDeclaration] as string), 0);
+      const outerHeight = (element: HTMLElement | null) =>
+        element ? element.offsetHeight + parseFloat(getComputedStyle(element).marginTop)
+          + parseFloat(getComputedStyle(element).marginBottom) : 0;
+      const firstHeader = outerHeight(first.querySelector('[data-print-header]'));
+      const nextHeader = sheets[1]
+        ? outerHeight(sheets[1].querySelector('[data-print-header]')) : firstHeader;
+      const footer = Math.max(...sheets.map(sheet => outerHeight(sheet.querySelector('[data-print-footer]'))));
+      const available = pageHeight - verticalInsets - footer;
+      const firstCapacity = Math.floor(available - firstHeader);
+      const nextCapacity = Math.floor(available - nextHeader);
+      setMeasurements(previous =>
+        previous.firstCapacity === firstCapacity && previous.nextCapacity === nextCapacity &&
+        previous.heights.length === heights.length &&
+        heights.every((height, i) => height === previous.heights[i])
+          ? previous : { heights, firstCapacity, nextCapacity }
+      );
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(preview);
+    questions.forEach(question => observer.observe(question));
+    sheets.forEach(sheet => {
+      sheet.querySelectorAll('[data-print-header], [data-print-footer]').forEach(element => observer.observe(element));
+    });
+    return () => observer.disconnect();
+  }, [paginatedPages, pageHeight, rightTab, density, choiceLayout, fontSize, examMeta, matrix]);
 
   return (
     <div className="flex flex-col h-[calc(100vh-4.5rem)] overflow-hidden exam-studio-container">
@@ -244,22 +258,35 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
         </div>
 
         <div className="flex items-center gap-2">
+          {referenceSources.length > 0 && (
+            <details className="relative text-xs">
+              <summary className="cursor-pointer rounded border border-slate-200 px-2 py-1.5">Nguồn tham khảo</summary>
+              <ul className="absolute right-0 z-20 mt-1 w-72 space-y-2 rounded border border-slate-200 bg-white p-3 shadow">
+                {referenceSources.filter(source => /^https?:\/\//i.test(source.url)).map(source => (
+                  <li key={source.url}>
+                    <a href={source.url} target="_blank" rel="noopener noreferrer"
+                      className="text-blue-700 underline">{source.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )}
           {/* Nút Sinh toàn bộ đề */}
           <button
             onClick={onGenerateAll}
             disabled={isGeneratingAll}
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-bold rounded-lg shadow-sm transition-colors duration-150 disabled:opacity-50"
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg shadow-sm transition-colors duration-150 disabled:opacity-50"
           >
             <Sparkles className={`w-3.5 h-3.5 text-amber-300 ${isGeneratingAll ? 'animate-spin' : ''}`} />
-            <span>{isGeneratingAll ? `Đang sinh (${progress.current}/${progress.total})…` : 'AI Sinh toàn bộ đề'}</span>
+            <span>{isGeneratingAll ? 'Đang sinh đề…' : 'AI Sinh toàn bộ đề'}</span>
           </button>
 
           {/* Nút Xuất bản & Trộn đề */}
           <button
             onClick={onOpenExport}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-lg shadow-sm transition-colors duration-150"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold rounded-lg shadow-2xs transition-colors duration-150"
           >
-            <SlidersHorizontal className="w-3.5 h-3.5 text-emerald-400" />
+            <SlidersHorizontal className="w-3.5 h-3.5 text-slate-600" />
             <span>Xuất bản & Trộn đề</span>
           </button>
         </div>
@@ -268,10 +295,7 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
       {/* Progress Bar khi đang sinh */}
       {isGeneratingAll && (
         <div className="w-full bg-slate-200 h-1 shrink-0 overflow-hidden no-print">
-          <div 
-            className="bg-blue-600 h-full transition-all duration-300"
-            style={{ width: `${(progress.current / (progress.total || 1)) * 100}%` }}
-          />
+          <div className="h-full w-1/3 bg-indigo-600 animate-pulse" />
         </div>
       )}
 
@@ -291,35 +315,76 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
           </div>
 
           <div className="flex-1 overflow-y-auto p-2 space-y-1">
-            {questions.map((q, idx) => {
-              const isSelected = activeQuestionIndex === idx;
-              return (
-                <button
-                  key={q.id || idx}
-                  onClick={() => scrollToQuestion(idx)}
-                  className={`w-full flex items-center justify-between p-2 rounded-lg text-xs font-medium transition-colors duration-150 ${
-                    isSelected 
-                      ? "bg-blue-600 text-white shadow-xs font-bold" 
-                      : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-100"
-                  }`}
-                >
-                  <div className="flex items-center gap-1.5 truncate">
-                    <span className="w-5 text-left font-mono">
-                      {idx + 1}.
-                    </span>
-                    <span className="truncate">
-                      {q.type === "MULTIPLE_CHOICE" ? "TN 4 Lựa chọn" : q.type === "TRUE_FALSE" ? "Đúng / Sai" : "Trả lời ngắn"}
+            {isGeneratingAll ? (
+              matrix.slots.map((slot, idx) => {
+                const isDone = idx < questions.length;
+                const isCurrent = idx === questions.length;
+                return (
+                  <div
+                    key={slot.slot_id || idx}
+                    className={`w-full flex items-center justify-between p-2 rounded-lg text-xs font-medium border transition-colors ${
+                      isCurrent
+                        ? "bg-blue-50/90 border-blue-200 text-blue-900 font-bold"
+                        : isDone
+                        ? "bg-white border-slate-200 text-slate-800"
+                        : "bg-slate-50/50 border-slate-100 text-slate-400 opacity-60"
+                    }`}
+                  >
+                    <div className="flex items-center gap-1.5 truncate">
+                      {isDone ? (
+                        <CheckCircle2 className="w-3.5 h-3.5 stroke-[1.75] text-emerald-500 shrink-0" />
+                      ) : isCurrent ? (
+                        <Loader2 className="w-3.5 h-3.5 stroke-[1.75] text-blue-600 animate-spin shrink-0" />
+                      ) : (
+                        <CircleDashed className="w-3.5 h-3.5 stroke-[1.75] text-slate-300 shrink-0" />
+                      )}
+                      <span className="w-5 text-left font-mono tabular-nums">
+                        {idx + 1}.
+                      </span>
+                      <span className="truncate">
+                        {slot.type === "MULTIPLE_CHOICE" ? "Trắc nghiệm" : slot.type === "TRUE_FALSE" ? "Đúng/Sai" : slot.type === "SHORT_ANSWER" ? "Điền số" : "Tự luận"}
+                      </span>
+                    </div>
+
+                    <span className={`text-[10px] px-1.5 py-0.2 rounded font-bold ${
+                      levelBadges[slot.level]?.color || "bg-slate-100"
+                    }`}>
+                      {levelBadges[slot.level]?.label}
                     </span>
                   </div>
+                );
+              })
+            ) : (
+              questions.map((q, idx) => {
+                const isSelected = activeQuestionIndex === idx;
+                return (
+                  <button
+                    key={q.id || idx}
+                    onClick={() => scrollToQuestion(idx)}
+                    className={`w-full flex items-center justify-between p-2 rounded-lg text-xs font-medium transition-colors duration-150 ${
+                      isSelected 
+                        ? "bg-blue-600 text-white shadow-xs font-bold" 
+                        : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-100"
+                    }`}
+                  >
+                    <div className="flex items-center gap-1.5 truncate">
+                      <span className="w-5 text-left font-mono">
+                        {idx + 1}.
+                      </span>
+                      <span className="truncate">
+                        {q.type === "MULTIPLE_CHOICE" ? "Trắc nghiệm" : q.type === "TRUE_FALSE" ? "Đúng/Sai" : q.type === "SHORT_ANSWER" ? "Điền số" : "Tự luận"}
+                      </span>
+                    </div>
 
-                  <span className={`text-[10px] px-1.5 py-0.2 rounded font-bold ${
-                    isSelected ? "bg-white/20 text-white" : levelBadges[q.level]?.color || "bg-slate-100"
-                  }`}>
-                    {levelBadges[q.level]?.label}
-                  </span>
-                </button>
-              );
-            })}
+                    <span className={`text-[10px] px-1.5 py-0.2 rounded font-bold ${
+                      isSelected ? "bg-white/20 text-white" : levelBadges[q.level]?.color || "bg-slate-100"
+                    }`}>
+                      {levelBadges[q.level]?.label}
+                    </span>
+                  </button>
+                );
+              })
+            )}
           </div>
         </aside>
 
@@ -332,9 +397,10 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
             <div className="flex items-center gap-1 overflow-x-auto">
               {[
                 { id: 'all', label: `Tất cả (${questions.length})` },
-                { id: 1, label: `Phần I (${questions.filter(q => q.type === "MULTIPLE_CHOICE").length})` },
-                { id: 2, label: `Phần II (${questions.filter(q => q.type === "TRUE_FALSE").length})` },
-                { id: 3, label: `Phần III (${questions.filter(q => q.type === "SHORT_ANSWER").length})` },
+                ...(questions.some(q => q.type === "MULTIPLE_CHOICE") ? [{ id: 'mc', label: `Trắc nghiệm (${questions.filter(q => q.type === "MULTIPLE_CHOICE").length})` }] : []),
+                ...(questions.some(q => q.type === "TRUE_FALSE") ? [{ id: 'tf', label: `Đúng/Sai (${questions.filter(q => q.type === "TRUE_FALSE").length})` }] : []),
+                ...(questions.some(q => q.type === "SHORT_ANSWER") ? [{ id: 'sa', label: `Trả lời ngắn (${questions.filter(q => q.type === "SHORT_ANSWER").length})` }] : []),
+                ...(questions.some(q => q.type === "ESSAY") ? [{ id: 'essay', label: `Tự luận (${questions.filter(q => q.type === "ESSAY").length})` }] : []),
               ].map(tab => (
                 <button
                   key={tab.id}
@@ -356,25 +422,143 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
           </div>
 
           {/* Question Cards List */}
-          <div className="flex-1 overflow-y-auto p-4">
-            {filteredQuestions.length === 0 ? (
+          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            {isGeneratingAll && (
+              /* A. AI Progress Command Card (Thẻ Tiến trình Trung tâm) */
+              <div className="bg-white border border-blue-200/90 shadow-lg shadow-blue-500/5 rounded-2xl p-5 mb-4">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shrink-0">
+                      <Loader2 className="w-6 h-6 stroke-[1.75] animate-spin" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-slate-900 tracking-tight">
+                        AI đang biên soạn đề thi theo ma trận đặc tả...
+                      </h3>
+                      <p className="text-xs text-slate-500 mt-0.5 line-clamp-1">
+                        Đang xử lý: <strong className="text-blue-700">
+                          {matrix.slots[Math.min(questions.length, matrix.slots.length - 1)]?.part === 1 ? 'Phần I - Trắc nghiệm 4 lựa chọn' : matrix.slots[Math.min(questions.length, matrix.slots.length - 1)]?.part === 2 ? 'Phần II - Trắc nghiệm Đúng/Sai' : 'Phần III - Trả lời ngắn'}
+                        </strong> • {matrix.slots[Math.min(questions.length, matrix.slots.length - 1)]?.topic}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="text-right shrink-0">
+                    <div className="tabular-nums text-2xl font-bold text-blue-600 leading-none">
+                      {String(questions.length).padStart(2, '0')} / {String(matrix.slots.length).padStart(2, '0')}
+                    </div>
+                    <div className="text-xs font-semibold text-slate-500 mt-1 tabular-nums">
+                      ({matrix.slots.length > 0 ? Math.round((questions.length / matrix.slots.length) * 100) : 0}%)
+                    </div>
+                  </div>
+                </div>
+
+                {/* Thanh Progress Bar Đa tầng (Solid Color) */}
+                <div className="h-3 w-full bg-slate-100 rounded-full overflow-hidden my-4 p-0.5">
+                  <div 
+                    className="h-full bg-blue-600 transition-all duration-500 ease-out rounded-full"
+                    style={{ width: `${Math.max(matrix.slots.length > 0 ? Math.round((questions.length / matrix.slots.length) * 100) : 0, 8)}%` }}
+                  />
+                </div>
+
+                {/* 4 Bước Pipeline Trực quan (4-Step Pipeline Checklist) */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 border-t border-slate-100 text-xs">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 stroke-[1.75] text-emerald-600 shrink-0" />
+                    <span className="text-slate-700 font-medium">Phân tích ma trận ({matrix.slots.length} slots)</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    {questions.length >= matrix.slots.length ? (
+                      <CheckCircle2 className="w-4 h-4 stroke-[1.75] text-emerald-600 shrink-0" />
+                    ) : (
+                      <Loader2 className="w-4 h-4 stroke-[1.75] text-blue-600 animate-spin shrink-0" />
+                    )}
+                    <span className={questions.length >= matrix.slots.length ? "text-slate-700 font-medium" : "text-blue-700 font-semibold"}>
+                      Sinh câu hỏi & Công thức LaTeX
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    {questions.length >= matrix.slots.length ? (
+                      <CheckCircle2 className="w-4 h-4 stroke-[1.75] text-emerald-600 shrink-0" />
+                    ) : questions.length > Math.floor(matrix.slots.length / 2) ? (
+                      <Loader2 className="w-4 h-4 stroke-[1.75] text-indigo-600 animate-spin shrink-0" />
+                    ) : (
+                      <CircleDashed className="w-4 h-4 stroke-[1.75] text-slate-300 shrink-0" />
+                    )}
+                    <span className="text-slate-600 font-medium">Kiểm chứng đáp án & Lời giải</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    {questions.length >= matrix.slots.length ? (
+                      <CheckCircle2 className="w-4 h-4 stroke-[1.75] text-emerald-600 shrink-0" />
+                    ) : (
+                      <CircleDashed className="w-4 h-4 stroke-[1.75] text-slate-300 shrink-0" />
+                    )}
+                    <span className="text-slate-600 font-medium">Đóng gói chuẩn ex_test.sty</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Thẻ câu hỏi thật đã hoàn thành */}
+            {filteredQuestions.map((q, idx) => (
+              <QuestionCard
+                key={q.id || idx}
+                question={q}
+                index={idx}
+                isActive={activeQuestionIndex === idx}
+                onRegenerate={(prompt) => onRegenerateSlot(q.id, prompt)}
+                onCloneNumbers={() => onCloneNumbers(q.id)}
+                onUpdate={onUpdateQuestion}
+              />
+            ))}
+
+            {/* B. Live Streaming: 3 Question Skeleton Cards mô phỏng cấu trúc câu hỏi */}
+            {isGeneratingAll && Array.from({ length: Math.min(3, Math.max(1, matrix.slots.length - questions.length)) }).map((_, k) => {
+              const targetSlot = matrix.slots[questions.length + k];
+              if (!targetSlot) return null;
+              return (
+                <div key={`skeleton-${k}`} className="bg-white border border-slate-200/80 rounded-xl p-5 space-y-4 shadow-xs">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="font-bold text-xs text-slate-800 tabular-nums">
+                        Câu {targetSlot.slot_number}.
+                      </span>
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200/70">
+                        {levelBadges[targetSlot.level]?.label} • {targetSlot.topic}
+                      </span>
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-xs text-blue-600 font-semibold bg-blue-50/70 px-2.5 py-1 rounded-md border border-blue-100">
+                      <Loader2 className="w-3.5 h-3.5 stroke-[1.75] animate-spin" />
+                      <span>Đang biên soạn...</span>
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-4 bg-slate-200/70 rounded w-3/4 animate-pulse" />
+                    <div className="h-4 bg-slate-200/70 rounded w-1/2 animate-pulse" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    {["A", "B", "C", "D"].map((letter) => (
+                      <div key={letter} className="h-10 bg-slate-50 border border-slate-100 rounded-lg p-2.5 flex items-center gap-2 animate-pulse">
+                        <span className="w-5 h-5 rounded-full bg-slate-200/80 text-slate-500 font-bold text-[10px] flex items-center justify-center">
+                          {letter}
+                        </span>
+                        <div className="h-2.5 bg-slate-200/70 rounded w-2/3" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+
+            {!isGeneratingAll && filteredQuestions.length === 0 && (
               <div className="h-full flex flex-col items-center justify-center text-center p-8 text-slate-400">
-                <Sparkles className="w-10 h-10 text-slate-300 mb-2" />
+                <Sparkles className="w-10 h-10 stroke-[1.75] text-slate-300 mb-2" />
                 <p className="text-sm font-semibold text-slate-600">Chưa có câu hỏi nào</p>
                 <p className="text-xs text-slate-400 mt-1">Bấm "AI Sinh toàn bộ đề" ở thanh trên để bắt đầu.</p>
               </div>
-            ) : (
-              filteredQuestions.map((q, idx) => (
-                <QuestionCard
-                  key={q.id || idx}
-                  question={q}
-                  index={idx}
-                  isActive={activeQuestionIndex === idx}
-                  onRegenerate={(prompt) => onRegenerateSlot(q.id, prompt)}
-                  onCloneNumbers={() => onCloneNumbers(q.id)}
-                  onUpdate={onUpdateQuestion}
-                />
-              ))
             )}
           </div>
         </section>
@@ -410,17 +594,6 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
                 <span>Mã nguồn .tex</span>
               </button>
 
-              <button
-                onClick={() => startTransition(() => setRightTab('pdf'))}
-                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-blue-500 ${
-                  rightTab === 'pdf' 
-                    ? "bg-white text-blue-700 shadow-xs font-bold" 
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
-              >
-                <Printer className="w-3.5 h-3.5" />
-                <span>Biên dịch PDF</span>
-              </button>
             </div>
 
             {/* Quick Actions at Top Right */}
@@ -444,10 +617,10 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
                 {/* Nút Magic: Tự động sắp xếp vừa A4 */}
                 <button
                   onClick={handleAutoFitA4}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold rounded-lg shadow-xs transition cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 font-semibold rounded-lg shadow-2xs transition-colors duration-150 cursor-pointer"
                   title="Tự động tính toán số câu, phương án và phân bổ vừa khít số trang A4 chuẩn"
                 >
-                  <Wand2 className="w-3.5 h-3.5 text-amber-100" />
+                  <Wand2 className="w-3.5 h-3.5 text-blue-600" />
                   <span>Tự sắp xếp vừa A4</span>
                 </button>
 
@@ -528,11 +701,77 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
               )}
 
               {/* KHU VỰC CUỘN CÁC TRANG GIẤY A4 MÔ PHỎNG */}
-              <div className="flex-1 overflow-y-auto p-4 flex flex-col items-center gap-6">
+              <div ref={previewRef} className="a4-preview-pages flex-1 overflow-y-auto p-4 flex flex-col items-center gap-6">
                 {paginatedPages.length === 0 ? (
-                  <div className="bg-white p-8 rounded-lg shadow-sm text-center text-slate-400 text-xs">
-                    Chưa có câu hỏi nào để hiển thị.
-                  </div>
+                  isGeneratingAll ? (
+                    /* Paper Skeleton khi đang AI sinh đề */
+                    <div 
+                      className={`a4-sheet w-full ${isPreviewExpanded ? "max-w-[760px] p-8" : "max-w-[480px] xl:max-w-[540px] p-6"} text-slate-900 exam-paper-font flex flex-col justify-between relative bg-white border border-slate-200 rounded-lg shadow-sm`}
+                      style={{ minHeight: pageHeight }}
+                    >
+                      {/* Floating Pill ở giữa trang giấy */}
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/90 text-white rounded-full shadow-xl backdrop-blur-md text-xs font-semibold">
+                          <Loader2 className="w-4 h-4 stroke-[1.75] text-blue-400 animate-spin" />
+                          <span>Đang dàn trang LaTeX A4 ({questions.length}/{matrix.slots.length} câu)...</span>
+                        </div>
+                      </div>
+
+                      <div>
+                        {/* Header đề thi chuẩn Bộ GD&ĐT */}
+                        <div className="border-b border-slate-900 pb-3 mb-4">
+                          <div className="flex justify-between items-start gap-2">
+                            <div className="text-center font-bold text-[11px] leading-tight flex-1">
+                              <div>{examMeta.school_name}</div>
+                              <div>{examMeta.exam_name}</div>
+                              <div className="font-normal italic text-[10px]">Năm học: {examMeta.academic_year}</div>
+                            </div>
+                            <div className="text-center text-[11px] leading-tight flex-1">
+                              <div className="font-bold">{matrix.title}</div>
+                              <div className="text-[10px] mt-0.5">Thời gian làm bài: {matrix.time_minutes} phút</div>
+                              <div className="font-bold text-[10px]">Mã đề thi: {examMeta.exam_code}</div>
+                            </div>
+                          </div>
+                          <div className="text-center italic text-[9px] mt-1 text-slate-500">
+                            (Đề thi có {Math.max(1, Math.ceil(matrix.slots.length / 10))} trang)
+                          </div>
+                        </div>
+
+                        {/* Skeleton các dòng câu hỏi trên giấy A4 */}
+                        <div className="space-y-4 opacity-70">
+                          <div className="h-3.5 bg-slate-200/80 rounded w-2/5 animate-pulse" />
+                          <div className="space-y-2 pl-3">
+                            <div className="h-3 bg-slate-200/60 rounded w-11/12 animate-pulse" />
+                            <div className="h-3 bg-slate-200/60 rounded w-4/5 animate-pulse" />
+                            <div className="grid grid-cols-2 gap-2 pt-1">
+                              <div className="h-2.5 bg-slate-100 rounded w-3/4 animate-pulse" />
+                              <div className="h-2.5 bg-slate-100 rounded w-3/4 animate-pulse" />
+                              <div className="h-2.5 bg-slate-100 rounded w-3/4 animate-pulse" />
+                              <div className="h-2.5 bg-slate-100 rounded w-3/4 animate-pulse" />
+                            </div>
+                          </div>
+
+                          <div className="h-3.5 bg-slate-200/80 rounded w-1/3 animate-pulse pt-2" />
+                          <div className="space-y-2 pl-3">
+                            <div className="h-3 bg-slate-200/60 rounded w-full animate-pulse" />
+                            <div className="h-3 bg-slate-200/60 rounded w-2/3 animate-pulse" />
+                            <div className="grid grid-cols-2 gap-2 pt-1">
+                              <div className="h-2.5 bg-slate-100 rounded w-3/4 animate-pulse" />
+                              <div className="h-2.5 bg-slate-100 rounded w-3/4 animate-pulse" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="text-center text-[10px] text-slate-400 border-t border-slate-200 pt-2 font-mono">
+                        Trang 1 / {Math.max(1, Math.ceil(matrix.slots.length / 10))}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="bg-white p-8 rounded-lg shadow-sm text-center text-slate-400 text-xs">
+                      Chưa có câu hỏi nào để hiển thị.
+                    </div>
+                  )
                 ) : (
                   paginatedPages.map((page) => {
                     const isFirstPage = page.pageIndex === 1;
@@ -542,12 +781,12 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
                       <div
                         key={page.pageIndex}
                         className={`a4-sheet w-full ${isPreviewExpanded ? "max-w-[760px] p-8" : "max-w-[480px] xl:max-w-[540px] p-6"} text-slate-900 exam-paper-font flex flex-col justify-between`}
-                        style={{ minHeight: isPreviewExpanded ? '1070px' : '720px' }}
+                        style={{ minHeight: pageHeight }}
                       >
                         <div>
                           {/* HEADER TRANG 1 (Chuẩn Bộ Giáo Dục & Đào Tạo) */}
                           {isFirstPage ? (
-                            <div className="border-b border-slate-900 pb-3 mb-4">
+                            <div data-print-header className="border-b border-slate-900 pb-3 mb-4">
                               <div className="flex justify-between items-start gap-2">
                                 <div className="text-center font-bold text-[11px] leading-tight flex-1">
                                   <div>{examMeta.school_name}</div>
@@ -566,7 +805,7 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
                             </div>
                           ) : (
                             /* HEADER CÁC TRANG TIẾP THEO (Rút gọn) */
-                            <div className="flex justify-between items-center text-[10px] text-slate-500 border-b border-slate-300 pb-1.5 mb-4">
+                            <div data-print-header className="flex justify-between items-center text-[10px] text-slate-500 border-b border-slate-300 pb-1.5 mb-4">
                               <span className="font-medium uppercase tracking-wide">
                                 {matrix.title} • Mã đề: {examMeta.exam_code}
                               </span>
@@ -577,12 +816,12 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
                           )}
 
                           {/* DANH SÁCH CÂU HỎI TRONG TRANG */}
-                          <div className={columnMode === 2 ? "two-column-exam" : (density === 'compact' ? "space-y-2.5" : density === 'spacious' ? "space-y-4" : "space-y-3")}>
+                          <div className={columnMode === 2 ? "two-column-exam" : undefined}>
                             {page.items.map((q) => {
                               const choiceGrid = getChoiceGridClass(q.choices, choiceLayout);
 
                               return (
-                                <div key={q.id || q.globalIndex} className="question-avoid-break mb-3">
+                                <div key={q.id || q.globalIndex} data-print-question={q.globalIndex} className={`question-avoid-break flow-root ${density === "compact" ? "pb-2.5" : density === "spacious" ? "pb-4" : "pb-3"}`}>
                                   {/* Tiêu đề phân đoạn Phần I, Phần II, Phần III */}
                                   {q.isFirstOfPart && (
                                     <div className="mb-2 pb-1 border-b border-slate-300">
@@ -606,11 +845,9 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
                                       </div>
                                     </div>
 
-                                    {/* Hình vẽ TikZ (nếu có) */}
+                                    {/* Hình vẽ TikZ / Bảng biến thiên trực quan khi in A4 */}
                                     {q.tikz_code && q.tikz_code.trim() && (
-                                      <div className="my-1.5 p-2 bg-slate-50 border border-slate-200 rounded text-center text-[10px] text-slate-500 italic">
-                                        [Hình vẽ TikZ / Bảng biến thiên]
-                                      </div>
+                                      <TikZView tikzCode={q.tikz_code} printMode={true} />
                                     )}
 
                                     {/* Phương án trắc nghiệm 4 lựa chọn (Phần I) */}
@@ -619,7 +856,7 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
                                         {q.choices.map((c, i) => (
                                           <div key={i} className="flex items-start gap-1">
                                             <span className="font-bold shrink-0">{["A", "B", "C", "D"][i]}.</span>
-                                            <div className="truncate flex-1">
+                                            <div className="min-w-0 flex-1 overflow-visible">
                                               <MathView text={c} />
                                             </div>
                                           </div>
@@ -655,7 +892,7 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
                         </div>
 
                         {/* FOOTER TRANG IN CHUẨN */}
-                        <div className="border-t border-slate-300 pt-2 mt-4 text-center text-[10px] text-slate-500">
+                        <div data-print-footer className="border-t border-slate-300 pt-2 mt-4 text-center text-[10px] text-slate-500">
                           {isLastPage ? (
                             <div>
                               <div className="font-bold text-slate-700 tracking-wider">---------- HẾT ----------</div>
@@ -682,7 +919,7 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
             <ViewTransition enter="fade-in" exit="fade-out">
               <div className="flex-1 flex flex-col bg-slate-950 p-3 overflow-hidden">
                 <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-800 text-xs text-slate-400">
-                  <span className="font-mono text-emerald-400">ex_test.sty format (Chuẩn 2026)</span>
+                  <span className="font-mono text-slate-300">ex_test.sty format (Chuẩn 2026)</span>
                   <button
                     onClick={handleCopyLatex}
                     className="inline-flex items-center gap-1 px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-semibold text-xs focus-visible:ring-2 focus-visible:ring-blue-500"
@@ -696,35 +933,78 @@ export const ExamStudio: React.FC<ExamStudioProps> = ({
                   readOnly
                   aria-label="Mã nguồn LaTeX của đề thi"
                   value={latexCode}
-                  className="flex-1 w-full bg-slate-900 text-emerald-300 font-mono text-[11px] p-3 rounded-lg border border-slate-800 focus:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 resize-none overflow-y-auto leading-relaxed select-all"
+                  className="flex-1 w-full bg-slate-900 text-slate-100 font-mono text-[11px] p-3 rounded-lg border border-slate-800 focus:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 resize-none overflow-y-auto leading-relaxed select-all"
                 />
               </div>
             </ViewTransition>
           )}
 
-          {/* Tab 3: Compiled PDF View */}
-          {rightTab === 'pdf' && (
-            <ViewTransition enter="fade-in" exit="fade-out">
-              <div className="flex-1 p-6 bg-slate-50 flex flex-col items-center justify-center text-center">
-                <Printer className="w-12 h-12 text-blue-600 mb-3" />
-                <h3 className="font-bold text-slate-800 text-base mb-1">Biên dịch PDF bằng TeX Live</h3>
-                <p className="text-xs text-slate-500 max-w-xs mb-5 leading-relaxed">
-                  Biên dịch mã nguồn LaTeX qua container Docker TeX Live hoặc pdflatex để xuất file PDF in ấn chuẩn A4.
-                </p>
-
-                <button
-                  onClick={onCompilePdf}
-                  disabled={isCompiling}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-md transition disabled:opacity-50 focus-visible:ring-2 focus-visible:ring-blue-500"
-                >
-                  <Printer className={`w-4 h-4 ${isCompiling ? 'animate-spin' : ''}`} />
-                  <span>{isCompiling ? 'Đang biên dịch PDF…' : 'Tiến hành biên dịch PDF ngay'}</span>
-                </button>
-              </div>
-            </ViewTransition>
-          )}
         </aside>
       </div>
+      {questions.length > 0 && (
+        <section className="print-paper hidden" aria-label="Đề thi để in">
+          <div className="print-paper-heading">
+            <div>
+              <strong>{examMeta.school_name}</strong>
+              <div>{examMeta.exam_name}</div>
+              <div>Năm học {examMeta.academic_year}</div>
+            </div>
+            <div>
+              <strong>{matrix.title}</strong>
+              <div>Thời gian làm bài {matrix.time_minutes} phút</div>
+              <div>Mã đề {examMeta.exam_code}</div>
+            </div>
+          </div>
+          {annotatedQuestions.map(question => (
+            <div key={question.id} className="print-paper-question question-avoid-break">
+              {question.isFirstOfPart && (
+                <div className="print-paper-part">
+                  <strong>{question.partTitle}</strong>
+                  <div>{question.partDesc}</div>
+                </div>
+              )}
+              <div className="print-paper-stem">
+                <strong>Câu {question.globalIndex}. </strong>
+                <MathView text={question.stem} />
+              </div>
+              {question.type === 'MULTIPLE_CHOICE' && question.choices && (
+                <div className="print-paper-choices">
+                  {question.choices.map((choice, index) => (
+                    <div key={index}><strong>{'ABCD'[index]}. </strong><MathView text={choice} /></div>
+                  ))}
+                </div>
+              )}
+              {question.type === 'TRUE_FALSE' && question.statements && (
+                <div className="print-paper-statements">
+                  {question.statements.map((statement, index) => (
+                    <div key={index}><strong>{'abcd'[index]}) </strong><MathView text={statement.statement} /></div>
+                  ))}
+                </div>
+              )}
+              {question.type === 'SHORT_ANSWER' && <div>Đáp số ................................</div>}
+            </div>
+          ))}
+          <div className="print-paper-end">HẾT</div>
+        </section>
+      )}
+      {includeSolution && questions.length > 0 && (
+        <section className="print-solutions hidden">
+          <h2>ĐÁP ÁN VÀ LỜI GIẢI</h2>
+          {questions.map((question, index) => (
+            <div key={question.id} className="question-avoid-break mb-3">
+              <strong>Câu {index + 1}. </strong>
+              {question.type === 'MULTIPLE_CHOICE' && question.correct_index != null &&
+                <span>Đáp án {'ABCD'[question.correct_index]}. </span>}
+              {question.type === 'SHORT_ANSWER' && question.correct_value &&
+                <span>Đáp số {question.correct_value}. </span>}
+              {question.type === 'TRUE_FALSE' && question.statements &&
+                <span>{question.statements.map((item, i) =>
+                  `${'abcd'[i]}) ${item.is_correct ? 'Đúng' : 'Sai'}`).join('; ')}. </span>}
+              <MathView text={question.solution} />
+            </div>
+          ))}
+        </section>
+      )}
     </div>
   );
 };
