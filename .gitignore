@@ -1,0 +1,77 @@
+# AI Assistants and Agent Tools
+.agents/
+.gemini/
+.antigravity/
+.cursor/
+.cursorrules
+.claude/
+.windsurf/
+.idea/
+.vscode/
+*.sublime-*
+
+# Environment and Secrets
+.env
+.env.*
+*.env
+*.local
+credentials.json
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+venv/
+ENV/
+env/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Frontend Dependencies
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm
+.eslintcache
+
+# Logs
+logs/
+*.log
+
+# OS generated
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# TeX temporary compilation files
+*.aux
+*.out
+*.toc
+*.synctex.gz
