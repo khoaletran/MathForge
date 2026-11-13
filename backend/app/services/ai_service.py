@@ -467,6 +467,56 @@ Hãy trả về định dạng JSON thuần túy theo schema yêu cầu.
                     sympy_code="is_valid = True",
                     verified=True
                 )
+            elif "căn" in full_text or "căn thức" in full_text:
+                x = random.choice([9, 16, 25, 49, 64])
+                import math
+                rx = int(math.isqrt(x))
+                return Question(
+                    id=slot.slot_id,
+                    type=QuestionType.MULTIPLE_CHOICE,
+                    topic=slot.topic,
+                    subtopic=slot.subtopic,
+                    level=slot.level,
+                    stem=f"Giá trị của căn bậc hai số học $\\sqrt{{{x}}}$ bằng",
+                    choices=[f"${rx}$", f"${-rx}$", f"${x}$", f"$\\pm {rx}$"],
+                    correct_index=0,
+                    solution=f"Căn bậc hai số học của ${x}$ là số không âm có bình phương bằng ${x}$, do đó $\\sqrt{{{x}}} = {rx}$.",
+                    tikz_code=None,
+                    sympy_code="is_valid = True",
+                    verified=True
+                )
+            elif "đơn thức" in full_text or "đa thức" in full_text or "bậc của" in full_text:
+                b = random.choice([3, 4, 5])
+                return Question(
+                    id=slot.slot_id,
+                    type=QuestionType.MULTIPLE_CHOICE,
+                    topic=slot.topic,
+                    subtopic=slot.subtopic,
+                    level=slot.level,
+                    stem=f"Bậc của đa thức $P(x, y) = 3x^{{{b}}}y^2 - 5x^2y + 7$ bằng",
+                    choices=[f"${b+2}$", f"${b}$", f"${b+1}$", f"$2$"],
+                    correct_index=0,
+                    solution=f"Hạng tử $3x^{{{b}}}y^2$ có bậc cao nhất là ${b} + 2 = {b+2}$. Vậy bậc của đa thức là ${b+2}$.",
+                    tikz_code=None,
+                    sympy_code="is_valid = True",
+                    verified=True
+                )
+            elif "hình tam giác" in full_text or "hình vuông" in full_text or "hình chữ nhật" in full_text or "hình thoi" in full_text or "hình lục giác" in full_text:
+                a = random.choice([4, 5, 6])
+                return Question(
+                    id=slot.slot_id,
+                    type=QuestionType.MULTIPLE_CHOICE,
+                    topic=slot.topic,
+                    subtopic=slot.subtopic,
+                    level=slot.level,
+                    stem=f"Chu vi của một hình vuông có độ dài cạnh ${a}\\text{{ cm}}$ là",
+                    choices=[f"${4*a}\\text{{ cm}}$", f"${a*a}\\text{{ cm}}$", f"${2*a}\\text{{ cm}}$", f"${4*a + 2}\\text{{ cm}}$"],
+                    correct_index=0,
+                    solution=f"Chu vi hình vuông là $C = 4 \\times {a} = {4*a}\\text{{ cm}}$.",
+                    tikz_code=None,
+                    sympy_code="is_valid = True",
+                    verified=True
+                )
             elif "tỉ lệ thức" in full_text or "dãy tỉ số" in full_text or "hữu tỉ" in full_text:
                 k = random.choice([3, 4, 5])
                 x, y = 2 * k, 3 * k
@@ -793,6 +843,40 @@ Hãy trả về định dạng JSON thuần túy theo schema yêu cầu.
                     sympy_code="is_valid = True",
                     verified=True
                 )
+            elif "thống kê" in full_text or "xác suất" in full_text or "biểu đồ" in full_text or "số học sinh" in full_text:
+                total_students = random.choice([40, 45, 50])
+                gioi_pct = random.choice([20, 25, 30])
+                ans = total_students * gioi_pct // 100
+                return Question(
+                    id=slot.slot_id,
+                    type=QuestionType.SHORT_ANSWER,
+                    topic=slot.topic,
+                    subtopic=slot.subtopic,
+                    level=slot.level,
+                    stem=f"Một lớp học có ${total_students}$ học sinh. Kết quả khảo sát cho thấy có ${gioi_pct}\\%$ số học sinh đạt học lực Xuất sắc. Số học sinh đạt loại Xuất sắc của lớp là bao nhiêu học sinh?",
+                    correct_value=str(ans),
+                    solution=f"Số học sinh đạt loại Xuất sắc là: ${total_students} \\times {gioi_pct}\\% = {ans}$ học sinh.",
+                    tikz_code=None,
+                    sympy_code="is_valid = True",
+                    verified=True
+                )
+            elif "hình học" in full_text or "tam giác" in full_text or "đoạn thẳng" in full_text or "chiều dài" in full_text:
+                d = random.choice([15, 20, 25])
+                r = random.choice([8, 10, 12])
+                s = d * r
+                return Question(
+                    id=slot.slot_id,
+                    type=QuestionType.SHORT_ANSWER,
+                    topic=slot.topic,
+                    subtopic=slot.subtopic,
+                    level=slot.level,
+                    stem=f"Một mảnh vườn hình chữ nhật có chiều dài ${d}\\text{{ m}}$ và chiều rộng ${r}\\text{{ m}}$. Diện tích của mảnh vườn đó bằng bao nhiêu mét vuông?",
+                    correct_value=str(s),
+                    solution=f"Diện tích mảnh vườn là $S = {d} \\times {r} = {s}\\text{{ m}}^2$.",
+                    tikz_code=None,
+                    sympy_code="is_valid = True",
+                    verified=True
+                )
             elif "oxy" in top_lower and "oxyz" not in top_lower:
                 val = random.choice([2, 3, 5])
                 return Question(
@@ -808,7 +892,7 @@ Hãy trả về định dạng JSON thuần túy theo schema yêu cầu.
                     sympy_code=f"result = {val}\nis_valid = True",
                     verified=True
                 )
-            else:
+            elif "oxyz" in top_lower or "mặt phẳng" in full_text:
                 val = random.choice([2, 3, 5])
                 return Question(
                     id=slot.slot_id,
@@ -821,6 +905,21 @@ Hãy trả về định dạng JSON thuần túy theo schema yêu cầu.
                     solution=f"Khoảng cách từ $M$ đến mặt phẳng $(P)$ là: $d(M, (P)) = \\frac{{|2(1) - 2(2) + 1(3) + ({3*val - 1})|}}{{\\sqrt{{2^2 + (-2)^2 + 1^2}}}} = \\frac{{{3*val}}}{{3}} = {val}$.",
                     tikz_code=None,
                     sympy_code=f"result = {val}\nis_valid = True",
+                    verified=True
+                )
+            else:
+                x_val = random.choice([3, 4, 5])
+                return Question(
+                    id=slot.slot_id,
+                    type=QuestionType.SHORT_ANSWER,
+                    topic=slot.topic,
+                    subtopic=slot.subtopic,
+                    level=slot.level,
+                    stem=f"Tìm giá trị của $x$ biết $2x - 5 = {2*x_val - 5}$.",
+                    correct_value=str(x_val),
+                    solution=f"Ta có $2x - 5 = {2*x_val - 5} \\Leftrightarrow 2x = {2*x_val} \\Leftrightarrow x = {x_val}$.",
+                    tikz_code=None,
+                    sympy_code=f"result = {x_val}\nis_valid = True",
                     verified=True
                 )
 

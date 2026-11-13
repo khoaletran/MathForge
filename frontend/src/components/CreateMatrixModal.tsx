@@ -135,46 +135,49 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
       aria-modal="true"
       aria-labelledby="create-matrix-title"
     >
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in duration-200">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in duration-200 overscroll-contain">
         <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div className="flex items-center gap-2">
             <Layers className="w-5 h-5 text-blue-600" />
             <h3 id="create-matrix-title" className="font-bold text-slate-900 text-lg">Tự Thiết Kế Ma Trận Đề Thi Mới</h3>
           </div>
           <button 
+            type="button"
             onClick={onClose} 
-            className="p-1 rounded-lg text-slate-400 hover:text-slate-600 focus-visible:ring-2 focus-visible:ring-blue-500"
-            aria-label="Đóng bảng thiết kế ma trận"
+            className="p-1 rounded-lg text-slate-400 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            aria-label="Đóng hộp thoại tạo ma trận"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-6 space-y-6">
+        <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-6 space-y-6 overscroll-contain">
           {/* Metadata */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="md:col-span-2">
-              <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
+              <label htmlFor="matrix-title-input" className="block text-xs font-bold text-slate-700 uppercase mb-1">
                 Tên ma trận / Tiêu đề kỳ thi *
               </label>
               <input
+                id="matrix-title-input"
                 type="text"
                 required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="VD: ĐỀ KIỂM TRA GIỮA HỌC KỲ 1 - KHỐI 12"
-                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
+              <label htmlFor="matrix-grade-select" className="block text-xs font-bold text-slate-700 uppercase mb-1">
                 Khối Lớp
               </label>
               <select
+                id="matrix-grade-select"
                 value={grade}
                 onChange={(e) => setGrade(Number(e.target.value))}
-                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white"
+                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 bg-white"
               >
                 <option value={6}>Lớp 6</option>
                 <option value={7}>Lớp 7</option>
@@ -187,13 +190,14 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
+              <label htmlFor="matrix-semester-select" className="block text-xs font-bold text-slate-700 uppercase mb-1">
                 Học kỳ / Đợt thi
               </label>
               <select
+                id="matrix-semester-select"
                 value={semester}
                 onChange={(e) => setSemester(e.target.value)}
-                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white"
+                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 bg-white"
               >
                 <option value="Giữa kỳ 1">Giữa kỳ 1</option>
                 <option value="Học kỳ 1">Cuối kỳ 1</option>
@@ -204,29 +208,31 @@ export const CreateMatrixModal: React.FC<CreateMatrixModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
+              <label htmlFor="matrix-time-input" className="block text-xs font-bold text-slate-700 uppercase mb-1">
                 Thời gian làm bài (phút)
               </label>
               <input
+                id="matrix-time-input"
                 type="number"
                 min={15}
                 max={180}
                 value={timeMinutes}
                 onChange={(e) => setTimeMinutes(Number(e.target.value))}
-                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
+              <label htmlFor="matrix-desc-input" className="block text-xs font-bold text-slate-700 uppercase mb-1">
                 Mô tả ngắn
               </label>
               <input
+                id="matrix-desc-input"
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="VD: Kiểm tra chuyên đề Đạo hàm & Hình không gian"
-                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full text-sm p-2.5 border border-slate-300 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               />
             </div>
           </div>
